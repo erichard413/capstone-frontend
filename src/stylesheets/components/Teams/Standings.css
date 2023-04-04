@@ -1,0 +1,10 @@
+.Standings table {
+    word-break: break-all;
+    display: relative;
+    width: 100%;
+    border: 1px solid black;
+}
+.Standings thead > tr {
+    background-color: black;
+    color: white;
+}

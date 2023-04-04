@@ -1,0 +1,96 @@
+:root {
+    --silver: rgb(164,169,173);
+    --white: rgb(255,255,255);
+    --black: rgb(1,1,1);
+  }
+
+  @font-face { font-family: NHL; src: url('../../Assets/fonts/NHL.ttf'); } 
+  @font-face { font-family: NHL; font-weight: bold; src: url('../../Assets/fonts/NHL.ttf');}
+
+.NavBar {
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: var(--silver);
+    border-bottom: 10px solid var(--black);
+    z-index:3;
+}
+
+.nav-item {
+    width: 100px;
+    padding: 20px;
+    font-size: 25px;
+    text-align: right;
+}
+   
+.ml-auto a.active:hover {
+    color: #f0f2f5;
+}
+
+.navbar-brand {
+    position: absolute;
+    display: block;
+    text-align: left;
+    left: 10px;
+    top: 10px;
+    color: white;
+    font-weight: bold;
+}
+.ml-auto a:hover {
+    text-decoration: none;
+    color: #f0f2f5;
+}
+  
+nav a.active.navbar-nav {
+    border-bottom: none;
+}
+  
+.ml-auto a:hover {
+    font-weight: bold;
+}
+
+.navbar-brand {
+    text-align: left;
+    padding: 20px;
+    font-size: 50px;
+}
+.NavBar ul {
+    display: inline;
+}
+.NavBar li {
+    list-style: none;
+    display: inline;
+    width: 100%;
+}
+
+.NavBar a {
+    color: white;
+    text-decoration: none;
+}
+.ml-auto a.active {
+    color: var(--black);
+    text-decoration: none;
+}
+.NavBar h1 {
+    padding-top: 20px;
+    display: inline;
+    font-size: 100px;
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--black);
+}
+#tinyHeader {
+    padding-left: 3px;
+    font-size: 75px;
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+.ml-auto {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+@media (max-width: 479px) {
+
+}
