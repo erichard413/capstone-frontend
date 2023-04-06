@@ -78,8 +78,8 @@ function ActivePlayers({user, setUser}) {
         }
     }
 
-    let prevBtnDisabled = pageIdx == 1 ? 'disabled' : "";
-    let nextBtnDisabled = pageIdx == players.endPage ? 'disabled' : "";
+    let prevBtnDisabled = pageIdx === 1 ? 'disabled' : "";
+    let nextBtnDisabled = pageIdx === players.endPage ? 'disabled' : "";
 
     return (
         <div className="Players main-content"> 

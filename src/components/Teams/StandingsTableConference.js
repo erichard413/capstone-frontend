@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import formatStandingData from '../../helpers/formatStandingData';
 import '../../stylesheets/components/Teams/StandingsTable.css';
@@ -49,7 +48,7 @@ function StandingsTableConference({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>

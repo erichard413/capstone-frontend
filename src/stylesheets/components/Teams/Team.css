@@ -1,0 +1,86 @@
+@font-face { font-family: varsity; src: url('../../../Assets/fonts/varsity_regular.ttf'); } 
+
+.Team .top-container {
+    height: 300px;
+}
+
+.Team .name-img-div {
+    display: inline-block;
+}
+.Team .basic-details-div {
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: auto;
+}
+.Team h2 {
+    font-size: 5rem;
+    margin: 5px;
+}
+.Team ul {
+    display: block;
+    padding-top: 25%;
+    list-style: none;
+}
+.Team-stats-div {
+    vertical-align: top;
+    display: inline-block;
+    width: 28%;
+}
+.Team-roster-div {
+    display: inline-block;
+    width: 65%;
+}
+.Team .bottom-container {
+    text-align: left;
+}
+.Team div {
+    margin: 15px;
+}
+.Team .Team-roster-card-div {
+    text-align: center;
+    height: 300px;
+    width: 29%;
+    display: inline-block;
+    vertical-align: top;
+}
+.Team p {
+    text-align: center;
+    margin: 1px;
+}
+.Team-roster-card-div img {
+    width: 150px;
+    height: 150px;
+    mix-blend-mode: multiply;
+    border-radius: 50%;
+    border: 3px solid grey;
+}
+.jersey-number {
+    font-family: varsity, Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+}
+.Team-roster-card-div:hover {
+    background-color: rgb(230, 230, 230);
+}
+.Team .full-name {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.Team .position {
+    font-weight:600;
+    font-size: 1.2rem;
+}
+.Team .captain {
+    font-size: .8rem;
+}
+.Team .subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.Team .title {
+    font-size: 3rem;
+    font-size: 600;
+}
+.font-weighted {
+    font-weight: 600;
+}

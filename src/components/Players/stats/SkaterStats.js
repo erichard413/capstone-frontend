@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState} from 'react';
 import uuid from 'react-uuid';
 import '../../../stylesheets/components/Players/stats/SkaterStats.css';
 

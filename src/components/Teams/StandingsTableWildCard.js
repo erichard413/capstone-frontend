@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import formatStandingData from '../../helpers/formatStandingData';
 import '../../stylesheets/components/Teams/StandingsTable.css';
@@ -10,9 +9,9 @@ function StandingsTableWildCard({standings}) {
 
     return (
         <div className="StandingsTable">
-            <p>Eastern Conference</p> 
+            <p className="standings-title">Eastern Conference</p> 
             <table>
-                <caption>Metro Division</caption>
+                <caption className="standings-subtitle">Metro Division</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -48,7 +47,7 @@ function StandingsTableWildCard({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>
@@ -59,7 +58,7 @@ function StandingsTableWildCard({standings}) {
                 </tbody>
             </table>
             <table>
-                <caption>Atlantic Division</caption>
+                <caption className="standings-subtitle">Atlantic Division</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -95,7 +94,7 @@ function StandingsTableWildCard({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>
@@ -106,7 +105,7 @@ function StandingsTableWildCard({standings}) {
                 </tbody>
             </table>
             <table>
-                <caption>East Wildcard</caption>
+                <caption className="standings-subtitle">East Wildcard</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -142,7 +141,7 @@ function StandingsTableWildCard({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>
@@ -163,7 +162,7 @@ function StandingsTableWildCard({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>
@@ -173,9 +172,9 @@ function StandingsTableWildCard({standings}) {
                 ))}    
                 </tbody>
             </table>
-            <p>Western Conference</p>
+            <p className="standings-title">Western Conference</p>
             <table>
-                <caption>Central Division</caption>
+                <caption className="standings-subtitle">Central Division</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -211,7 +210,7 @@ function StandingsTableWildCard({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>
@@ -222,7 +221,7 @@ function StandingsTableWildCard({standings}) {
                 </tbody>
             </table>
             <table>
-                <caption>Pacific Division</caption>
+                <caption className="standings-subtitle">Pacific Division</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -258,7 +257,7 @@ function StandingsTableWildCard({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>
@@ -269,7 +268,7 @@ function StandingsTableWildCard({standings}) {
                 </tbody>
             </table>
             <table>
-                <caption>West Wildcard</caption>
+                <caption className="standings-subtitle">West Wildcard</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -305,7 +304,7 @@ function StandingsTableWildCard({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>
@@ -326,7 +325,7 @@ function StandingsTableWildCard({standings}) {
                     <td>{t.row}</td>
                     <td>{t.goalsScored}</td>
                     <td>{t.goalsAgainst}</td>
-                    <td style={{color: t.goalsScored-t.goalsAgainst == 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
+                    <td style={{color: t.goalsScored-t.goalsAgainst === 0 ? "black" : t.goalsScored - t.goalsAgainst > 0 ? "green" : "red"}}>{t.goalsScored - t.goalsAgainst > 0 ? "+" : ""}{t.goalsScored - t.goalsAgainst}</td>
                     <td>{t.records.overallRecords[0].wins}-{t.records.overallRecords[0].losses}-{t.records.overallRecords[0].ot}</td>
                     <td>{t.records.overallRecords[1].wins}-{t.records.overallRecords[1].losses}-{t.records.overallRecords[1].ot}</td>
                     <td>{t.records.overallRecords[2].wins}-{t.records.overallRecords[2].losses}</td>

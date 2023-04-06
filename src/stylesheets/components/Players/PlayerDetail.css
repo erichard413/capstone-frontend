@@ -1,0 +1,46 @@
+.PlayerDetail .top-div div {
+    display: inline-block;
+}
+.top-div{
+    height: 170px;
+}
+.top-div img {
+    object-fit: cover;
+}
+h2 {
+    font-size: 6rem;
+    margin: 0px;
+}
+.PlayerDetail .top-div ul {
+    list-style: none;
+    margin-top: 15%;
+}
+.top-right-div {
+    height: 100%;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+.top-left-div {
+    width: 165px;
+    height: 165px;
+    overflow: hidden;
+    border: 3px solid grey;
+    border-radius: 50%;
+}
+.font-weighted {
+    font-weight: 600;
+}
+
+.stats-div {
+    display: inline-block;
+}
+.title {
+    font-size: 3rem;
+    margin: 0px;
+}
+.bio-div ul {
+    list-style: none;
+    padding-bottom: 10px;
+    padding-left: 0;
+}

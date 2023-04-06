@@ -60,7 +60,8 @@ function App() {
         let data = jwt_decode(NHLstatsAPI.token);
         let userData = await NHLstatsAPI.getUser(data.username);
         userData.favPlayers=await getFavPlayers(userData.username);
-        userData.watchedTeams = await getWatchedTeams(userData);
+        let watchedTeams = await getWatchedTeams(userData);
+        userData.watchedTeams = watchedTeams;
         console.log('got user: ',  userData)
         setUser(userData);
     }
@@ -76,16 +77,18 @@ function App() {
       localStorage.setItem('token', res.token);
       NHLstatsAPI.token = res.token;
       let data = jwt_decode(NHLstatsAPI.token);
-      let userData = await NHLstatsAPI.getUser(data.username);
-      let favPlayers = await getFavPlayers(userData.username);
-      userData.watchedTeams = await getWatchedTeams(userData);
-      userData.favPlayers = favPlayers;
-      console.log('got user: ',  userData)
-      setUser(userData);
-      navigate('/', {replace: true})
-      return true
+      async function getData() {
+        let userData = await NHLstatsAPI.getUser(data.username);
+        let favPlayers = await getFavPlayers(userData.username);
+          userData.watchedTeams = await getWatchedTeams(userData);
+          userData.favPlayers = favPlayers;
+          console.log('got user: ',  userData)
+          setUser(userData);
+          navigate('/home')
+      }
+      getData();
     } catch (err) {
-      return false
+      return err;
     }
   }
   // function to log out user
@@ -94,12 +97,13 @@ function App() {
     localStorage.removeItem('token')
     NHLstatsAPI.token = null;
   }
-
+  
   return (
     <div className="App">
         <NavBar user={user} logOut={logOutUser}/>
         <Routes>
             <Route exact path="/" element={<Home user={user} setUser={setUser}/>} />
+            <Route exact path="/home" element={<Home user={user} setUser={setUser}/>} />
             <Route exact path="/login" element={<Login login={logInUser}/>} />
             <Route exact path="/register" element={<Register setUser={setUser} teams={teams}/>} />
             <Route exact path="/profile" element={<Profile user={user} setUser={setUser} teams={teams}/>} />

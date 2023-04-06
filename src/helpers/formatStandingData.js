@@ -12,12 +12,13 @@ function formatStandingData(data, format) {
             const eastConf = [];
             const westConf = [];
             data.map(d => {
-                if (d.conference.id == 6 || d.conference.name == "Eastern") {
+                if (d.conference.id === 6 || d.conference.name === "Eastern") {
                     eastConf.push(...d.teamRecords);
                 }
-                if (d.conference.id == 5 || d.conference.name == "Western") {
+                if (d.conference.id === 5 || d.conference.name === "Western") {
                     westConf.push(...d.teamRecords);
                 }
+                return d;
             });
             let eastSorted = eastConf.sort((a,b)=> (+a.conferenceRank > +b.conferenceRank) ? 1 : ((+b.conferenceRank > +a.conferenceRank) ? -1 : 0));
             let westSorted = westConf.sort((a,b)=> (+a.conferenceRank > +b.conferenceRank) ? 1 : ((+b.conferenceRank > +a.conferenceRank) ? -1 : 0));

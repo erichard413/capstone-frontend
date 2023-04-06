@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;600&display=swap');
+
 .Standings table {
     word-break: break-all;
     display: relative;
@@ -7,4 +9,40 @@
 .Standings thead > tr {
     background-color: black;
     color: white;
+}
+.Standings-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.Standings-links button {
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    padding: 5px 25px;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+}
+.Standings-links button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.standings-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 5px;
+}
+.standings-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 5px;
+}
+.Standings a {
+    text-decoration: none;
+    color: black;
+}
+.Standings table td:first-child {
+    text-align: left;
+    padding-left: 25px;
 }

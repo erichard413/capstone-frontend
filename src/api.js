@@ -1,5 +1,5 @@
 import axios from "axios";
-import jwt_decode from 'jwt-decode';
+import getRosterData from './helpers/getRosterData';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 const NHLAPI_BASE_URL = 'https://statsapi.web.nhl.com/api/v1';
@@ -101,9 +101,17 @@ class NHLstatsAPI {
         const res = await axios.get(`${NHLAPI_BASE_URL}/teams/${teamId}?expand=team.stats`);
         return res.data.teams[0].teamStats[0].splits;
     }
+    // static async getRoster(teamId) {
+    //     const res = await this.request(`teams/${teamId}/roster`, {}, 'get');
+    //     return res;
+    // }
     static async getRoster(teamId) {
-        const res = await this.request(`teams/${teamId}/roster`, {}, 'get');
-        return res;
+        const res = await axios.get(`${NHLAPI_BASE_URL}/teams/${teamId}/roster`);
+
+        // this will get roster, but we need player data.
+        const output = await getRosterData(res.data.roster);
+
+        return output; 
     }
     static async getWatchedTeams(username) {
         const res = await this.request(`users/${username}/teams`, {}, 'get');

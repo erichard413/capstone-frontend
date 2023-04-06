@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import NHLstatsAPI from '../../api';
 import '../../stylesheets/components/Players/PlayerCard.css';

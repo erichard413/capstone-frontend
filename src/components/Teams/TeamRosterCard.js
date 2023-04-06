@@ -1,9 +1,11 @@
 import React from 'react';
 import '../../stylesheets/components/Teams/TeamRosterCard.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import headshot from '../../Assets/images/default_profile_picture.png';
 
 
 function TeamRosterCard({player}) {
+    const navigate=useNavigate();
     if (!player) {
         return (
             <div>
@@ -11,14 +13,24 @@ function TeamRosterCard({player}) {
             </div>
         )
     }
+    function handleClick(id) {
+        navigate(`/players/${id}`, {replace: 'true'});
+    }
+    let imgURL = `http://nhl.bamcontent.com/images/headshots/current/168x168/${player.id}.jpg`;
 
+    // to replace image if image URL is not found/forbidden.
+    function replaceImage(error) {
+        error.target.src = headshot;
+    }
     return (
-        <tr>
-            <td><img src={`http://nhl.bamcontent.com/images/headshots/current/168x168/${player.person.id}.jpg`} width="50px" height="50px" alt={`image-${player.person.fullName}`}/></td>
-            <td>#{player.jerseyNumber}</td>
-            <td><Link key={player.person.id} to={`/players/${player.person.id}`}>{player.person.fullName}</Link></td>
-            <td>{player.position.name}</td>
-        </tr>
+        <div className="Team-roster-card-div" onClick={e => {handleClick(player.id)}}>
+            <p className="jersey-number">#{player.primaryNumber}</p>
+            
+            <p><img src={imgURL} alt={`image-${player.fullName}`} onError={replaceImage}/></p>
+            <p className="full-name">{player.fullName}</p>
+            <p className="position">{player.primaryPosition.name}</p>
+            <p className="captain">{player.captain && "Captain"}{player.alternateCaptain && "Alternate Captain"}</p>
+        </div>
     )
 }
 

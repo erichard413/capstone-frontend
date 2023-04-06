@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../stylesheets/components/Teams/TeamStats.css';
-import NHLstatsAPI from '../../api';
 
 
 function TeamStats({stats}) {
@@ -15,11 +14,10 @@ function TeamStats({stats}) {
     const stat = stats[0].stat;
     const rank = stats[1].stat;
 
-    console.log(stats);
     return (
         <div className="TeamStats">
             <table>
-                <caption>Stats For Nerds</caption>
+                <caption className="title">Stats For Nerds</caption>
                 <thead>
                     <tr>
                        <th>Stat</th> 

@@ -1,6 +1,5 @@
 import React from 'react';
 import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 import '../stylesheets/forms/LoginForm.css';
 import {
     Button,
@@ -15,7 +14,7 @@ function LoginForm({login}) {
     const [flashMsg, setFlashMsg] = useState(initialFlash);
     const initialState = {username: "", password: ""}
     const [formData, setFormData] = useState(initialState);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -28,8 +27,9 @@ function LoginForm({login}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const doLogin = async()=>{
-          let res = await login(formData.username, formData.password)
-          if (!res) {
+          try {
+            await login(formData.username, formData.password)
+          } catch(err) {
             setFlashMsg('Invalid username/password combo!');
             setTimeout(()=> {setFlashMsg(initialFlash)}, 2500)
           }
@@ -37,8 +37,10 @@ function LoginForm({login}) {
         doLogin();
       }
 
+
     return (
         <div>
+        <p>{flashMsg}</p>
         <Form className="form">
           <FormGroup>
             <Label for="type">Username:</Label>

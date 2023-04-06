@@ -1,7 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import PlayerCard from './PlayerCard';
-import players from '@nhl-api/players';
 import '../../stylesheets/components/Players/ActivePlayers.css';
 import NHLstatsAPI from '../../api';
 import _ from 'lodash';
@@ -83,8 +82,8 @@ function AllPlayers({user, setUser}) {
         }
     }
 
-    let prevBtnDisabled = pageIdx == 1 ? 'disabled' : "";
-    let nextBtnDisabled = pageIdx == allPlayers.endPage ? 'disabled' : "";
+    let prevBtnDisabled = pageIdx === 1 ? 'disabled' : "";
+    let nextBtnDisabled = pageIdx === allPlayers.endPage ? 'disabled' : "";
 
     return (
         <div className="AllPlayers main-content"> 

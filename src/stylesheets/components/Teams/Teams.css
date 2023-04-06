@@ -1,0 +1,28 @@
+.TeamCard {
+    font-weight: 600;
+    font-size: 2em;
+    display: inline-block;
+    margin: 10px;
+    height: 25%;
+    width: 30%;
+    padding: 5px;
+}
+.TeamCard img {
+    height: 50%;
+    width: 50%;
+}
+.TeamCard:hover {
+    background-color: rgb(230, 230, 230);
+}
+.TeamCard Link {
+    text-decoration: none;
+    color: black;
+}
+.TeamCard Link:visited {
+    text-decoration: none;
+    color: black;
+}
+.TeamCard p {
+    margin: 5px;
+}
+

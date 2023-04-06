@@ -39,21 +39,37 @@ function Team() {
             </div>
         )
     }
-    console.log(roster);
+    console.log(`roster->`,roster);
     return (
         <div className="Team main-content">
-            <img className="Standings-logo" src={`https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/${teamId}.svg`} style={{width: '300px', height: '300px'}} alt={`logo-${team.name}`} />
             <h2>{team.name}</h2>
-            <ul>
-                <li>City: {team.city}</li>
-                <li>Venue: {team.venue}</li>
-                <li>Conference: {team.conference}</li>
-                <li>Division: {team.division}</li>
-                <li>Website: <a href={team.url}>{team.url}</a></li>
-            </ul>
-            <TeamStats stats={teamStats}/>
-            <div className="Roster">
-                {roster && roster.map(p => <TeamRosterCard key={p.person.id} player={p}/>)}
+            <div className="top-container">
+                    <div className="Team name-img-div">
+                        <img className="Standings-logo" src={`https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/${teamId}.svg`} style={{width: '300px', height: '300px'}} alt={`logo-${team.name}`} />
+                    </div>
+                    <div className="Team basic-details-div">
+                            <ul>
+                                <li><span className="font-weighted">City: </span>{team.city}</li>
+                                <li><span className="font-weighted">Venue: </span>{team.venue}</li>
+                                <li><span className="font-weighted">Conference: </span>{team.conference}</li>
+                                <li><span className="font-weighted">Division: </span>{team.division}</li>
+                                <li><span className="font-weighted">Website: </span><a href={team.url}>{team.url.replace(/^https?:\/\//, '').slice(0,-1)}</a></li>
+                            </ul>
+                    </div>
+            </div>
+            <div className="bottom-container">
+                <div className="Team-stats-div">
+                    <TeamStats stats={teamStats}/>
+                </div>
+                <div className="Team-roster-div">
+                    <p className="title">Current Roster</p>
+                    <p className="subtitle">Forwards</p>
+                    {roster && roster.forwards.map(p => <TeamRosterCard key={p.id} player={p}/>)}
+                    <p>Defensemen</p>
+                    {roster && roster.defensemen.map(p => <TeamRosterCard key={p.id} player={p}/>)}
+                    <p>Goalies</p>
+                    {roster && roster.goalies.map(p => <TeamRosterCard key={p.id} player={p}/>)}
+                </div>
             </div>
         </div>
     )

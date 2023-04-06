@@ -1,13 +1,12 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import {getPlayerMugshot} from '@nhl-api/players';
 import '../../stylesheets/components/Players/PlayerDetail.css';
 import NHLstatsAPI from '../../api';
 import SkaterStats from './stats/SkaterStats';
 import GoalieStats from './stats/GoalieStats';
-import headshot from '../../Assets/images/default_profile_picture.svg';
-import axios from 'axios';
+import headshot from '../../Assets/images/default_profile_picture.png';
+
 
 
 function PlayerDetail() {
@@ -38,26 +37,47 @@ function PlayerDetail() {
         )
     }
 
-    const {name, teamId, jerseyNumber, position} = player;
     let imgURL = `http://nhl.bamcontent.com/images/headshots/current/168x168/${playerId}.jpg`;
 
     // to replace image if image URL is not found/forbidden.
     function replaceImage(error) {
         error.target.src = headshot;
     }
-    console.log(player);
+
     return (
         <div className="PlayerDetail main-content">
-            <img src={imgURL} onError={replaceImage}/>
-            <h2>{name}</h2> 
-            <ul>
-                <li>Jersey Number: {jerseyNumber}</li>
-                <li>Team: {teamId}</li>
-                <li>Position: {position}</li>
-            </ul>
-            {stats && player.primaryPosition.name !== 'Goalie' && <SkaterStats stats={stats}/>}
-            {stats && player.primaryPosition.name === 'Goalie' && <GoalieStats stats={stats}/>}
-            
+            <h2>{player.fullName}</h2>
+            <div className="top-div">
+                <div className="top-left-div">
+                    <img src={imgURL} onError={replaceImage}/>
+                </div>
+                <div className="top-right-div">
+                     <ul>
+                        <li><span className="font-weighted">Jersey Number</span>: {player.primaryNumber}</li>
+                        {player.active &&  <li><span className="font-weighted">Team:</span> {player.currentTeam.name}</li>}
+                        <li><span className="font-weighted">Position:</span> {player.primaryPosition.name}</li>
+                        <li> <span className="font-weighted">{player.primaryPosition.type !== "Goalie" ? "Shoots: " : "Catches: " }</span>
+                        {player.shootsCatches === "R" ? "Right" : "Left"}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className="bio-div">
+                <p className="title">Bio</p>
+                <ul>
+                    <li><span className="font-weighted">Age: </span>{player.currentAge}</li>
+                    <li><span className="font-weighted">Birth Date: </span>{player.birthDate}</li>
+                    <li><span className="font-weighted">Hometown: </span>{player.birthCity} {player.birthStateProvince}</li>
+                    <li><span className="font-weighted">Nationality: </span> {player.nationality}</li>
+                    <li><span className="font-weighted">Height: </span>{player.height}</li>
+                    <li><span className="font-weighted">Weight: </span>{player.weight}</li>
+                </ul>
+            </div>
+            <div className="stats-div">
+                <p className="title">Stats</p>
+                {stats && player.primaryPosition.name !== 'Goalie' && <SkaterStats stats={stats}/>}
+                {stats && player.primaryPosition.name === 'Goalie' && <GoalieStats stats={stats}/>}
+            </div>
         </div>
     )
 }

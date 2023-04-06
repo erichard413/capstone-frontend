@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState} from 'react';
 import uuid from 'react-uuid';
 import '../../../stylesheets/components/Players/stats/GoalieStats.css';
 
@@ -39,8 +38,8 @@ function GoalieStats({stats}) {
                         <td>{season.stat.shotsAgainst}</td>
                         <td>{season.stat.saves}</td>
                         <td>{season.stat.goalsAgainst}</td>
-                        <td>{season.stat.savePercentage.toFixed(3).slice(1)}</td>
-                        <td>{season.stat.goalAgainstAverage.toFixed(2)}</td>
+                        <td>{season.stat.savePercentage && season.stat.savePercentage.toFixed(3).slice(1)}</td>
+                        <td>{season.stat.goalAgainstAverage && season.stat.goalAgainstAverage.toFixed(2)}</td>
                         <td>{season.stat.timeOnIce}</td>
                         <td>{season.stat.shutouts}</td>
                     </tr>))}
