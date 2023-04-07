@@ -1,0 +1,55 @@
+.Profile h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.Profile .row{
+    width: 750px;
+    margin: auto;
+}
+
+.Profile Input {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    border: 2px solid black; 
+
+}
+.Profile Select {
+    display: inline-block;
+    margin: 0px;
+    width: 100.5%;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    border: 2px solid black; 
+}
+.Profile Label {
+    width: 20%;
+}
+.Profile .FlashMsg {
+    color: rgb(151, 66, 66);
+    font-size: .8rem;
+    font-style: italic;
+    margin: 0px;
+}
+.Profile .FlashMsg-success {
+    color: rgb(17, 146, 13);
+    font-size: .8rem;
+    font-style: italic;
+    margin: 0px;
+}
+.Profile button {
+    margin-top: 15px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    padding: 5px 25px;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+}
+.Profile button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

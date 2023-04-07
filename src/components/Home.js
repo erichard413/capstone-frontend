@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import {Button} from 'reactstrap';
 import WatchedTeamsCard from './User/WatchedTeamsCard';
 import PlayerCard from './Players/PlayerCard';
+import '../stylesheets/components/Home.css';
 
 function Home({user, setUser}) {
     const navigate = useNavigate();
@@ -30,14 +31,14 @@ function Home({user, setUser}) {
 
     return(
         <div className="Home main-content">
-            <p>Welcome back, {user.firstName}</p>
+            <h2>Welcome back, {user.firstName}</h2>
             <div>
                 <div className="Home watchedTeams">
-                    <p>Watched Teams</p>
+                    <p className="home-title">Watched Teams</p>
                     {Object.keys(user.watchedTeams).map(key=> (<WatchedTeamsCard key={key} user={user} setUser={setUser} team={user.watchedTeams[key]} />))}
                 </div>
                 <div className="Home watchedTeams">
-                    <p>Watched Players</p>
+                    <p className="home-title">Favorite Players</p>
                     {Object.keys(user.favPlayers).map(key=> (<PlayerCard key={key} user={user} setUser={setUser} player={user.favPlayers[key]} />))}
                 </div>
             </div>

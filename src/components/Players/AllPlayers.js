@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import PlayerCard from './PlayerCard';
-import '../../stylesheets/components/Players/ActivePlayers.css';
+import '../../stylesheets/components/Players/Players-list.css';
 import NHLstatsAPI from '../../api';
 import _ from 'lodash';
 import {
@@ -31,14 +31,6 @@ function AllPlayers({user, setUser}) {
         }
         getAllPlayers();
     },[])
-    // change to page Idx, go get next pagination
-    useEffect(()=>{
-        const getAllPlayers = async function() {
-            let res = await NHLstatsAPI.getAllPlayers(pageIdx, paginationLimit);
-            setAllPlayers(res);
-        }
-        getAllPlayers();
-    },[pageIdx, paginationLimit])
 
     if (!allPlayers) {
        return (
@@ -47,7 +39,8 @@ function AllPlayers({user, setUser}) {
     }
 
     async function search() {
-        let res = await NHLstatsAPI.getAllPlayers(pageIdx, paginationLimit, formData.name);
+        let res = await NHLstatsAPI.getAllPlayers(1, paginationLimit, formData.name);
+        setPageIdx(1);
         setAllPlayers(res);
     }
 
@@ -74,24 +67,40 @@ function AllPlayers({user, setUser}) {
     function handlePrev() {
         if(pageIdx > 1) {
             setPageIdx(pageIdx-1);
+            const getAllPlayers = async function() {
+                let res = await NHLstatsAPI.getAllPlayers(pageIdx, paginationLimit, formData.name);
+                setAllPlayers(res);
+            }
+            getAllPlayers();
         }
     }
     function handleNext() {
         if(pageIdx < allPlayers.endPage) {
             setPageIdx(pageIdx+1);
+            const getAllPlayers = async function() {
+                let res = await NHLstatsAPI.getAllPlayers(pageIdx, paginationLimit, formData.name);
+                setAllPlayers(res);
+            }
+            getAllPlayers();
         }
+    }
+    function handleReset() {
+        setFormData(initialState)
+        setPageIdx(1);
+        const getAllPlayers = async function() {
+            let res = await NHLstatsAPI.getAllPlayers(pageIdx, paginationLimit);
+            setAllPlayers(res);
+        }
+        getAllPlayers();
     }
 
     let prevBtnDisabled = pageIdx === 1 ? 'disabled' : "";
     let nextBtnDisabled = pageIdx === allPlayers.endPage ? 'disabled' : "";
 
     return (
-        <div className="AllPlayers main-content"> 
+        <div className="Players main-content"> 
             <div>
-                <button onClick={handlePrev} disabled={prevBtnDisabled}> &larr; </button>
-                {pageIdx}
-                <button onClick={handleNext} disabled={nextBtnDisabled}> &rarr; </button>
-                <Form className="form" onSubmit={handleSearch}>
+                <Form className="players-form" onSubmit={handleSearch}>
                     <FormGroup>
                     <Label for="type">Search By Name:</Label>
                     <Input name="name"
@@ -102,7 +111,11 @@ function AllPlayers({user, setUser}) {
                     />
                     </FormGroup>
                 <Button onClick={handleSearch}>SEARCH</Button>
+                <Button onClick={handleReset}>RESET</Button>
             </Form>
+                <button onClick={handlePrev} disabled={prevBtnDisabled}> &larr; </button>
+                <p className="pageIdx">{pageIdx}</p>
+                <button onClick={handleNext} disabled={nextBtnDisabled}> &rarr; </button>
             </div>
             {allPlayers.results.map(p=> <PlayerCard key={p.playerId} user={user} setUser={setUser} player={p} />)}
         </div>

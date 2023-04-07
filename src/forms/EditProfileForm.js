@@ -1,6 +1,9 @@
 import React from "react";
 import "../stylesheets/forms/EditProfileForm.css";
+import validateEmail from "../helpers/emailValidator";
 import {useState, useEffect} from 'react';
+import getWatchedTeams from "../helpers/getWatchedTeams";
+import getFavPlayers from "../helpers/getFavPlayers";
 import {
     Button,
     Form,
@@ -12,6 +15,9 @@ import NHLstatsAPI from "../api";
 
 
 function EditProfileForm({user, setUser, teams}) {
+    let initialFlash = {}
+    let errs = {}
+    const [flashMsg, setFlashMsg] = useState(initialFlash)
     const [formData, setFormData] = useState({
         password: "password",
         firstName: "",
@@ -24,7 +30,6 @@ function EditProfileForm({user, setUser, teams}) {
         async function waitForUserData() {
             if (user) {
             setFormData({
-            password: "password",
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email,
@@ -39,30 +44,38 @@ function EditProfileForm({user, setUser, teams}) {
         return (<div>LOADING</div>)
     }
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        let {name, value} = e.target;
+        // validation - make sure that string doesn't exceed length of JSON Schema params & that email has no spaces.
+        let maxCharLength = name === 'email' ? 60 : 30;
+        value = name === 'email' ? value.replace(/ +/g, '') : value;
         setFormData(data => ({
             ...data,
-            [name] : value
+            [name] : value.slice(0, maxCharLength)
         }))
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const editProfile = async () => {
-            console.log(NHLstatsAPI.token)
-            await NHLstatsAPI.editUser(user.username, formData).then(
-            setUser({
-            username: user.username,
-            firstName: formData.firstName,
-            email: formData.email,
-            lastName: formData.lastName,
-            password: formData.password,
-            favTeamId: formData.favTeamId,
-            favPlayers: user.favPlayers,
-            watchedTeams: user.watchedTeams
-          })
-        )
-
+            // validation
+            if (formData.firstName === "") errs.firstName = 'First Name must not be empty!'
+            if (formData.lastName === "") errs.lastName = 'Last Name must not be empty!'
+            if (!validateEmail(formData.email)) errs.email = 'Email address must be a valid email!'
+            setFlashMsg(errs);
+            if (Object.keys(errs).length === 0) {
+                async function editUser() {
+                  await NHLstatsAPI.editUser(user.username, formData);
+                  let userData = await NHLstatsAPI.getUser(user.username);
+                  let favPlayers = await getFavPlayers(user.username);
+                  let watchedTeams = await getWatchedTeams(userData);
+                  userData.watchedTeams = watchedTeams;
+                  userData.favPlayers = favPlayers;
+                  setUser(userData);
+                }
+                editUser();
+                setFlashMsg({...flashMsg, success : 'Profile Updated Successfully!'});  
+            }
+            setTimeout(()=> {setFlashMsg(initialFlash)}, 3500)
         }
         editProfile();
     }
@@ -74,53 +87,50 @@ function EditProfileForm({user, setUser, teams}) {
     }
     
     return (
-        <div>
-        <Form className="form" onSubmit={e=> e.preventDefault()}>
-          <FormGroup>
-            <Label for="type">Password:</Label>
-            <Input name="password"
-                type="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="type">First Name:</Label>
-            <Input name="firstName"
+        <div className="EditProfileForm">
+        {flashMsg.success && <p className="FlashMsg-success">{flashMsg.success}</p>}
+        <Form className="col-12" onSubmit={e=> e.preventDefault()}>
+          <div className="row h-100 justify-content-center align-items-center">
+          {flashMsg.firstName && <p className="FlashMsg">{flashMsg.firstName}</p>}
+          <FormGroup className="form-group">
+            <Label className="form-label" for="type">First Name:</Label>
+            <Input className="form-label" name="firstName"
                 type="text"
                 placeholder="First Name"
                 value={formData.firstName}
                 onChange={handleChange}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="type">Last Name:</Label>
-            <Input name="lastName"
+          {flashMsg.lastName && <p className="FlashMsg">{flashMsg.lastName}</p>}
+          <FormGroup className="form-group">
+            <Label className="form-label" for="type">Last Name:</Label>
+            <Input className="form-label" name="lastName"
                 type="text"
                 placeholder="Last Name"
                 value={formData.lastName}
                 onChange={handleChange}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="type">Email:</Label>
-            <Input name="email"
+          {flashMsg.email && <p className="FlashMsg">{flashMsg.email}</p>}
+          <FormGroup className="form-group">
+            <Label className="form-label" for="type">Email:</Label>
+            <Input className="form-label email-input" name="email"
                 type="email"
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="type">Favorite Team:</Label>
-            <Input name="favTeamId"
+          <FormGroup className="form-group">
+            <Label className="form-label" for="type">Favorite Team:</Label>
+            <Input className="form-label" name="favTeamId"
                 type="select" defaultValue={user.favTeamId} onChange={handleChange}>
                   {teams.map(t=> <option key={t.id} value={t.id}>{t.name}</option>)}
               </Input>
           </FormGroup>
 
         <Button type="submit" onClick={handleSubmit}>Update</Button>
+                  </div> 
         </Form>
         </div>
     )

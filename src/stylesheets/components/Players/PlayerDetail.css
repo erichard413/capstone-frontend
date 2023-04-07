@@ -6,6 +6,8 @@
 }
 .top-div img {
     object-fit: cover;
+    height: 165px;
+    width: 165px;
 }
 h2 {
     font-size: 6rem;

@@ -34,8 +34,12 @@ class NHLstatsAPI {
         return res;
     }
     static async editUser(username, formData) {
-        let res = await this.request(`users/${username}`, formData, 'patch');
-        return res;
+        try {
+            let res = await this.request(`users/${username}`, formData, 'patch');
+            return res;
+        } catch (err) {
+            return err;
+        } 
     }
     static async getTeams() {
         let res = await this.request('teams', {}, 'get');

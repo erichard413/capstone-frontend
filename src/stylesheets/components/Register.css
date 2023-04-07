@@ -1,0 +1,62 @@
+.Register h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.Register form{
+    width: 300px;
+    margin: auto;
+}
+
+.Register Input {
+    border: 2px solid black;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    font-family: Dosis, Arial, Helvetica, sans-serif; 
+}
+
+.Register Label {
+    width: 20%;
+}
+
+.Register .FlashMsg {
+    color: rgb(151, 66, 66);
+    font-size: .8rem;
+    font-style: italic;
+    margin: 0px;
+}
+.Register button {
+    margin-top: 15px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    padding: 5px 25px;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+}
+.Register button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.Register button:disabled {
+    opacity: 20%;
+}
+.Register button:disabled:hover {
+    margin-top: 15px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    padding: 5px 25px;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+}
+.Register Select {
+    display: inline-block;
+    margin: 0px;
+    width: 100.5%;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    border: 2px solid black; 
+}

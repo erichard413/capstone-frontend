@@ -27,12 +27,11 @@ function LoginForm({login}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const doLogin = async()=>{
-          try {
-            await login(formData.username, formData.password)
-          } catch(err) {
-            setFlashMsg('Invalid username/password combo!');
-            setTimeout(()=> {setFlashMsg(initialFlash)}, 2500)
-          }
+            let res = await login(formData.username, formData.password)
+            if (!res.token) {
+              setFlashMsg('Invalid username/password combo!');
+              setTimeout(()=> {setFlashMsg(initialFlash)}, 3000)
+            }  
         }
         doLogin();
       }
@@ -40,7 +39,7 @@ function LoginForm({login}) {
 
     return (
         <div>
-        <p>{flashMsg}</p>
+        <p className='FlashMsg'>{flashMsg}</p>
         <Form className="form">
           <FormGroup>
             <Label for="type">Username:</Label>

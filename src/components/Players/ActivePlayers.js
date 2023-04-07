@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import PlayerCard from './PlayerCard';
-import '../../stylesheets/components/Players/ActivePlayers.css';
+import '../../stylesheets/components/Players/Players-list.css';
 import NHLstatsAPI from '../../api';
 import {
     Button,
@@ -14,6 +14,7 @@ import {
 
 function ActivePlayers({user, setUser}) {
     const [players, setPlayers] = useState();
+    const [currPlayers, setCurrPlayers] = useState();
     const [pageIdx, setPageIdx] = useState(1);
     const [nameSearch, setNameSearch] = useState();
     const [paginationLimit, setPaginationLimit] = useState(15);
@@ -27,17 +28,19 @@ function ActivePlayers({user, setUser}) {
         const getPlayers = async function() {
             let res = await NHLstatsAPI.getPlayers(pageIdx, paginationLimit);
             setPlayers(res);
+            setCurrPlayers(res);
         }
         getPlayers();
     },[])
     // change to page Idx, go get next pagination
     useEffect(()=>{
+        console.log('change to pageIdx')
         const getPlayers = async function() {
             let res = await NHLstatsAPI.getPlayers(pageIdx, paginationLimit);
-            setPlayers(res);
+            setCurrPlayers(res);
         }
         getPlayers();
-    },[pageIdx, paginationLimit])
+    },[pageIdx])
 
     if (!players) {
        return (
@@ -54,12 +57,11 @@ function ActivePlayers({user, setUser}) {
     }
 
     const handleSearch = (e) => {
-        console.log(e);
         e.preventDefault();
         let name = formData.name;
         async function searchPlayers() {
             const res = await NHLstatsAPI.getPlayers(1, paginationLimit, name);
-            setPlayers(res);
+            setCurrPlayers(res);
         }
         setNameSearch(name);
         setFormData(initialState);
@@ -78,16 +80,18 @@ function ActivePlayers({user, setUser}) {
         }
     }
 
+    function handleReset() {
+        setCurrPlayers(players);
+        setFormData(initialState)
+    }
+
     let prevBtnDisabled = pageIdx === 1 ? 'disabled' : "";
     let nextBtnDisabled = pageIdx === players.endPage ? 'disabled' : "";
 
     return (
         <div className="Players main-content"> 
             <div>
-                <button onClick={handlePrev} disabled={prevBtnDisabled}> &larr; </button>
-                {pageIdx}
-                <button onClick={handleNext} disabled={nextBtnDisabled}> &rarr; </button>
-                <Form className="form" onSubmit={handleSearch}>
+                <Form className="players-form" onSubmit={handleSearch}>
                     <FormGroup>
                     <Label for="type">Search By Name:</Label>
                     <Input name="name"
@@ -97,10 +101,13 @@ function ActivePlayers({user, setUser}) {
                     onChange={handleChange}
                     />
                     </FormGroup>
-                <Button onClick={handleSearch}>SEARCH</Button>
+                <Button onClick={handleSearch}>SEARCH</Button>   <Button onClick={handleReset}>RESET</Button>
             </Form>
+                <button onClick={handlePrev} disabled={prevBtnDisabled}> &larr; </button>
+                <p className="pageIdx">{pageIdx}</p>
+                <button onClick={handleNext} disabled={nextBtnDisabled}> &rarr; </button>
             </div>
-            {players && players.results.map(p=> <PlayerCard key={p.playerId} user={user} setUser={setUser} player={p}/>)}
+            {currPlayers && currPlayers.results.map(p=> <PlayerCard key={p.playerId} user={user} setUser={setUser} player={p}/>)}
         </div>
     )
 }

@@ -4,6 +4,7 @@ import {useState} from 'react';
 import NHLstatsAPI from "../api";
 import jwt_decode from 'jwt-decode';
 import {useNavigate} from 'react-router-dom';
+import validateEmail from "../helpers/emailValidator";
 
 import {
     Button,
@@ -15,7 +16,6 @@ import {
 
 function RegisterForm({setUser, teams}) {
   const navigate = useNavigate();
-  
   const [formError, setFormError] = useState([]);
   const initialState = {
         username: "",
@@ -26,14 +26,42 @@ function RegisterForm({setUser, teams}) {
         favTeamId: "1"
     }
   const [formData, setFormData] = useState(initialState);
-  const handleChange = (e) => {
-        const {name, value} = e.target;
-        setFormData(data => ({
-            ...data,
-            [name] : value
-        }))
-    }
 
+  // returns false if form not complete, true when form is completed
+  const isComplete = () => {
+    let res;
+    Object.values(formData).map(data => data === "" ? res = false : null);
+    if (res === false) {
+        return false;
+    }
+    if (formData.username.length < 2 || formData.username.length > 30)  {
+      return false;
+    }
+    if (formData.password.length < 5 || formData.password.length > 20)  {
+      return false;
+    }
+    if (formData.firstName.length < 2 || formData.firstName.length > 30) {
+      return false;
+    }
+    if (formData.lastName.length < 2 || formData.lastName.length > 30) {
+      return false;
+    }
+    if (!formData.email.includes('@' || !formData.email.includes('.')) || formData.email.length < 6) {
+      return false;
+    }
+    return true;
+  }
+
+  const handleChange = (e) => {
+    let {name, value} = e.target;
+    // validation - make sure that string doesn't exceed length of JSON Schema params & that email has no spaces.
+    let maxCharLength = name === 'email' ? 60 : name === 'password' ? 20 : 30;
+    value = name === 'email' ? value.replace(/ +/g, '') : value;
+    setFormData(data => ({
+        ...data,
+        [name] : value.slice(0, maxCharLength)
+    }))
+  }
   const handleSubmit = (e) => {
         e.preventDefault();
         const signMeUp = async() => {
@@ -48,7 +76,7 @@ function RegisterForm({setUser, teams}) {
           setUser(userData);
           navigate('/home', {replace: true});
         }
-        signMeUp().catch(err=> setFormError({...formError, ['duplicateusername'] : `Username ${formData.username} is taken, please choose another`}))
+        signMeUp().catch(err=> setFormError({...formError, ['duplicateUsername'] : `Username ${formData.username} is taken, please choose another`}))
         }
    
     if (!teams) {
@@ -61,6 +89,7 @@ function RegisterForm({setUser, teams}) {
         <div>
         <Form className="form">
           <FormGroup>
+            {formError.duplicateUsername && <p className="FlashMsg">{formError.duplicateUsername}</p>}
             <Label for="type">Username:</Label>
             <Input 
                 name="username"
@@ -114,7 +143,7 @@ function RegisterForm({setUser, teams}) {
               </Input>
           </FormGroup>
 
-        <Button type="submit" onClick={handleSubmit}>Sign Up</Button>
+        {isComplete() ? <Button type="submit" onClick={handleSubmit}>Sign Up</Button> : <Button type="submit" onClick={handleSubmit} disabled>Sign Up</Button> }
         </Form>
         </div>
     )

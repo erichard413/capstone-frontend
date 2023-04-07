@@ -4,8 +4,8 @@ import RegisterForm from '../forms/RegisterForm';
 
 function Register({setUser, teams}) {
     return (
-        <div className="main-content">
-            <p>I AM THE REGISTER PAGE</p>
+        <div className="Register main-content">
+            <h2>Create an Account</h2>
             <RegisterForm setUser={setUser} teams={teams}/>
         </div>
     )

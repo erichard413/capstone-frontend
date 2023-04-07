@@ -5,7 +5,7 @@ const NHLAPI_BASE_URL = 'https://statsapi.web.nhl.com/api/v1';
 const getWatchedTeams = async (user) => {
     const res = await NHLstatsAPI.getWatchedTeams(user.username);
     const teamIds = Object.keys(res);
-    console.log(user);
+
     if (!teamIds.includes(user.favTeamId)) {
        teamIds.unshift(user.favTeamId); 
     }

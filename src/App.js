@@ -28,7 +28,6 @@ function App() {
     async function getTokenFromLS() {
       let token = localStorage.getItem("token") || null;
       console.log('getting token..')
-      console.log(`token is ${token}`)
       if (token) {
         NHLstatsAPI.token = token;
       }
@@ -85,8 +84,9 @@ function App() {
           console.log('got user: ',  userData)
           setUser(userData);
           navigate('/home')
+      return res;
       }
-      getData();
+      return getData();
     } catch (err) {
       return err;
     }
@@ -106,7 +106,7 @@ function App() {
             <Route exact path="/home" element={<Home user={user} setUser={setUser}/>} />
             <Route exact path="/login" element={<Login login={logInUser}/>} />
             <Route exact path="/register" element={<Register setUser={setUser} teams={teams}/>} />
-            <Route exact path="/profile" element={<Profile user={user} setUser={setUser} teams={teams}/>} />
+            <Route exact path="/profile" element={<Profile user={user} setUser={setUser} teams={teams} />} />
             <Route exact path="/teams" element={<Teams teams={teams} />} />
             <Route exact path="/activeplayers" element={<ActivePlayers user={user} setUser={setUser}/>} />
             <Route exact path="/allplayers" element={<AllPlayers user={user} setUser={setUser}/>} />

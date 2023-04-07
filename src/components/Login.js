@@ -4,8 +4,8 @@ import LoginForm from '../forms/LoginForm';
 
 function Login({login}) {
     return (
-        <div className="main-content">
-            <p>I AM THE LOG IN PAGE!</p>
+        <div className="Login main-content">
+            <h2>Login</h2>
             <LoginForm login={login}/>
         </div>
     )

@@ -28,7 +28,7 @@ function GoalieStats({stats}) {
                 <tbody>
                     {stats && stats.map(season => (
                     <tr key={uuid()}>
-                        <td>{season.season}</td>
+                        <td>{season.season.slice(0,4)+"-"+season.season.slice(4)}</td>
                         <td>{season.team.name} ({season.league.name})</td>
                         <td>{season.stat.games}</td>
                         <td>{season.stat.gamesStarted}</td>

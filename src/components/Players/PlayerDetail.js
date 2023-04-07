@@ -66,7 +66,7 @@ function PlayerDetail() {
                 <p className="title">Bio</p>
                 <ul>
                     <li><span className="font-weighted">Age: </span>{player.currentAge}</li>
-                    <li><span className="font-weighted">Birth Date: </span>{player.birthDate}</li>
+                    <li><span className="font-weighted">Birth Date: </span>{player.birthDate.slice(5)+"-"+player.birthDate.slice(0, 4)}</li>
                     <li><span className="font-weighted">Hometown: </span>{player.birthCity} {player.birthStateProvince}</li>
                     <li><span className="font-weighted">Nationality: </span> {player.nationality}</li>
                     <li><span className="font-weighted">Height: </span>{player.height}</li>

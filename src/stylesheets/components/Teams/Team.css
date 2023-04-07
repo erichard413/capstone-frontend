@@ -61,6 +61,7 @@
 }
 .Team-roster-card-div:hover {
     background-color: rgb(230, 230, 230);
+    cursor: pointer;
 }
 .Team .full-name {
     font-weight: 600;

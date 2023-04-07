@@ -1,0 +1,14 @@
+.WatchedTeamsCard img {
+    height: 250px;
+    width: 250px;
+}
+.WatchedTeamsCard p {
+    font-weight: 600;
+}
+.WatchedTeamsCard {
+    display: inline-block;
+}
+.WatchedTeamsCard:hover {
+    cursor: pointer;
+    background-color: rgb(230, 230, 230);
+}

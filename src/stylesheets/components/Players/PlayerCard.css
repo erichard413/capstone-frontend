@@ -1,0 +1,39 @@
+.PlayerCard {
+    display: inline-block;
+    width: 30%;
+    padding-bottom: 5px;
+}
+.PlayerCard a {
+    text-decoration: none;
+    color: black;
+}
+.PlayerCard img {
+    object-fit: cover;
+    height: 165px;
+    width: 165px;
+    border: 2px solid grey;
+    border-radius: 50%;
+}
+.PlayerCard img:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+.PlayerCard button {
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    width: 100px;
+    height: 30px;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+    margin: 0px;
+}
+.PlayerCard button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.PlayerCard p {
+    margin: 0px;
+    font-weight: 600;
+}

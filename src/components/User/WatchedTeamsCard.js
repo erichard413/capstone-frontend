@@ -1,16 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import '../../stylesheets/components/Teams/WatchedTeamsCard.css';
 
 const WatchedTeamsCard = ({team}) => {
+    const navigate = useNavigate();
     if (!team) {
         return (
             <>
             </>
         )
     }
+
+    function handleClick() {
+        navigate(`/teams/${team.id}`, {replace: 'true'});
+    }
+
     return (
-        <div className="WatchedTeamsCard">
-            <p className="WatchedTeamsCard-title"><Link to={`/teams/${team.id}`}>{team.name}</Link></p>
+        <div className="WatchedTeamsCard" onClick={handleClick}>
+            <img src={`https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/${team.id}.svg`} alt={team.name}></img>
+            <p className="WatchedTeamsCard-title">{team.name}</p>
         </div>
     )
 }
