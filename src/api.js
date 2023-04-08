@@ -121,6 +121,18 @@ class NHLstatsAPI {
         const res = await this.request(`users/${username}/teams`, {}, 'get');
         return (res);
     }
+    static async addWatchedTeam(username, teamId) {
+        const res = await this.request(`users/${username}/teams/${teamId}`, {}, 'post');
+        return res;
+    }
+    static async removeWatchedTeam(username, teamId) {
+        const res = await this.request(`users/${username}/teams/${teamId}`, {}, 'delete');
+        return res;
+    }
+    static async removeFavoriteTeam(username) {
+        const res = await this.request(`users/${username}`, {favTeamId : null}, 'patch');
+        return res;
+    }
 }
 
 export default NHLstatsAPI

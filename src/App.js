@@ -112,7 +112,7 @@ function App() {
             <Route exact path="/allplayers" element={<AllPlayers user={user} setUser={setUser}/>} />
             <Route exact path="/players/:playerId" element={<PlayerDetail />} />
             <Route exact path="/myplayers" element={<FavPlayers user={user} setUser={setUser} />} />
-            <Route exact path="/teams/:teamId" element={<TeamDetail />} />
+            <Route exact path="/teams/:teamId" element={<TeamDetail user={user} setUser={setUser}/>} />
             <Route exact path="/standings" element={<Standings />} />
             <Route path="*" element={<Navigate to="/" replace />}/>
         </Routes>

@@ -5,8 +5,9 @@ import TeamStats from './TeamStats';
 import TeamRosterCard from './TeamRosterCard';
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import teamListAddRemove from '../../helpers/teamListAddRemove';
 
-function Team() {
+function Team({user, setUser}) {
     const {teamId} = useParams();
     const [team, setTeam] = useState();
     const [teamStats, setTeamStats] = useState();
@@ -39,7 +40,22 @@ function Team() {
             </div>
         )
     }
-    console.log(`roster->`,roster);
+
+    const handleAdd = (e) => {
+        e.preventDefault();
+        async function doAdd(){
+            await teamListAddRemove(user, setUser, team, 'ADD');
+        }
+        doAdd();
+    }
+    const handleRemove = (e) => {
+        e.preventDefault();
+        async function doRemove(){
+            await teamListAddRemove(user, setUser, team, 'REMOVE');
+        }
+        doRemove();
+    }
+
     return (
         <div className="Team main-content">
             <h2>{team.name}</h2>
@@ -54,6 +70,7 @@ function Team() {
                                 <li><span className="font-weighted">Conference: </span>{team.conference}</li>
                                 <li><span className="font-weighted">Division: </span>{team.division}</li>
                                 <li><span className="font-weighted">Website: </span><a href={team.url}>{team.url.replace(/^https?:\/\//, '').slice(0,-1)}</a></li>
+                                {user && user.watchedTeams[team.id] ? <button onClick={handleRemove}>Remove from Watchlist</button> :<button onClick={handleAdd}>Add to Watchlist</button> }
                             </ul>
                     </div>
             </div>
