@@ -38,7 +38,7 @@ function LoginForm({login}) {
 
 
     return (
-        <div>
+        <div className="Login">
         <p className='FlashMsg'>{flashMsg}</p>
         <Form className="form">
           <FormGroup>

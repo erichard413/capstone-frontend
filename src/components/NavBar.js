@@ -12,7 +12,7 @@ function NavBar({user, logOut}) {
     }
 
     return (
-        <div className="NavBar">
+        <div className={`NavBar ${user && `team-${user.favTeamId}` || 'default'}`}>
       <Navbar expand="md">
         <NavLink to="/" className="navbar-brand">
           <h1>NHL<span id="tinyHeader">STATS</span></h1> 

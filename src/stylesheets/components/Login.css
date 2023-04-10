@@ -27,7 +27,7 @@
     font-style: italic;
     margin: 0px;
 }
-.Login button {
+.Login Button {
     margin-top: 15px;
     font-family: Dosis, Arial, Helvetica, sans-serif;
     padding: 5px 25px;
@@ -36,7 +36,7 @@
     font-weight: 600;
     border-radius: 15px;
 }
-.Login button:hover {
+.Login Button:hover {
     background-color: black;
     color: white;
     cursor: pointer;

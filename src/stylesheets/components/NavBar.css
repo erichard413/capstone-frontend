@@ -2,7 +2,117 @@
     --silver: rgb(164,169,173);
     --white: rgb(255,255,255);
     --black: rgb(1,1,1);
+    /* 1 | New Jesey Devils */
+    --DEVILS-RED: rgb(206,17,38);
+    --DEVILS-BLACK: rgb(0,0,0);
+    /* 2 | New York Islanders */
+    --ISLANDERS-BLUE: rgb(0,83,155);
+    --ISLANDERS-ORANGE: rgb(244,125,48);
+    /* 3 | New York Rangers */
+    --RANGERS-BLUE: rgb(0,56,168);
+    --RANGERS-RED: rgb(206,17,38);
+    /* 4 | Philadelphia Flyers */
+    --FLYERS-ORANGE: rgb(247,73,2);
+    --FLYERS-BLACK: rgb(0,0,0);
+    /* 5 | Pittsburgh Penguins */
+    --PENGUINS-YELLOW: rgb(252,181,20);
+    --PENGUINS-BLACK: rgb(0,0,0);
+    /* 6 | Boston Bruins */
+    --BRUINS-GOLD: rgb(252,181,20);
+    --BRUINS-BLACK: rgb(17,17,17);
+    /* 7 | Buffalo Sabres */
+    --SABRES-BLUE: rgb(0,48,135);
+    --SABRES-GOLD: rgb(255,184,28);
+    /* 8 | Montréal Canadiens */
+    --CANADIENS-RED: rgb(175,30,45);
+    --CANADIENS-BLUE: rgb(25,33,104);
+    /* 9 | Ottawa Senators */
+    --SENATORS-RED: rgb(218,26,50);
+    --SENATORS-GOLD: rgb(183,146,87);
+    /* 10 | Toronto Maple Leafs */
+    --LEAFS-BLUE: rgb(0,32,91);
+    /* 12 | Carolina Hurricanes */
+    --HURRICANES-RED: rgb(206,17,38);
+    --HURRICANES-GREY: rgb(164,169,173);
+    /* 13 | Florida Panthers */
+    --PANTHERS-RED: rgb(200,16,46);
+    --PANTHERS-BLUE: rgb(4,30,66);
+    --PANTHERS-TAN: rgb(185,151,91);
+    /* 14 | Tampa Bay Lightning */
+    --LIGHTNING-BLUE: rgb(0,40,104);
+    /* 15 | Washington Capitals */
+    --CAPITALS-RED: rgb(200,16,46);
+    --CAPITALS-BLUE: rgb(4,30,66);
+    /* 16 | Chicago Blackhawks */
+    --BLACKHAWKS-RED: rgb(207,10,44);
+    /* 17 | Detroit Red Wings */
+    --REDWINGS-RED: rgb(206,17,38);
+    /* 18 | Nashville Predators */
+    --PREDATORS-GOLD: rgb(255,184,28);
+    --PREDATORS-BLUE: rgb(4,30,66);
+    /* 19 | St. Louis Blues */
+    --BLUES-BLUE: rgb(0,47,135);
+    --BLUES-YELLOW: rgb(252,181,20);
+    /* 20 | Calgary Flames */
+    --FLAMES-RED: rgb(210,0,28);
+    --FLAMES-YELLOW: rgb(250,175,25);
+    /* 21 | Colorado Avalanche */
+    --AVALANCHE-BURGUNDY: rgb(111,38,61);
+    --AVALANCHE-BLUE: rgb(35,97,146);
+    --AVALANCHE-SILVER: rgb(162,170,173);
+    /* 22 | Edmonton Oilers */
+    --OILERS-BLUE: rgb(4,30,66);
+    --OILERS-ORANGE: rgb(252,76,0);
+    /* 23 | Vancouver Canucks */
+    --CANUCKS-BLUE: rgb(0,32,91);
+    --CANUCKS-GREEN: rgb(10,134,61);
+    --CANUCKS-DARKBLUE: rgb(4,28,44);
+    --CANUCKS-GRAY: rgb(153,153,154);
+    /* 24 | Anaheim Ducks */
+    --DUCKS-ORANGE: rgb(252,76,2);
+    --DUCKS-GOLD: rgb(185,151,91);
+    --DUCKS-SILVER: rgb(193,198,200);
+    /* 25 | Dallas Stars */
+    --STARS-GREEN: rgb(0,104,71);
+    --STARS-SILVER: rgb(143,143,140);
+    /* 26 | Los Angeles Kings */
+    --KINGS-SILVER: rgb(162,170,173);
+    /* 28 | San Jose Sharks */
+    --SHARKS-TEAL: rgb(0,109,117);
+    --SHARKS-ORANGE: rgb(234,114,0);
+    /* 29 | Columbus Blue Jackets */
+    --BLUEJACKETS-BLUE: rgb(0,38,84);
+    --BLUEJACKETS-RED: rgb(206,17,38);
+    --BLUEJACKETS-SILVER: rgb(164,169,173);
+    /* 30 | Minnesota Wild */
+    --WILD-RED: rgb(175,35,36);
+    --WILD-GREEN: rgb(2,73,48);
+    --WILD-GOLD: rgb(237,170,0);
+    --WILD-TAN: rgb(226,214,181);
+    /* 52 | Winnepeg Jets */
+    --JETS-DARKBLUE: rgb(4,30,66);
+    --JETS-BLUE: rgb(0,76,151);
+    --JETS-RED: rgb(172,22,44);
+    --JETS-MAROON: rgb(123,48,62);
+    /* 53 | Arizona Coyotes */
+    --COYOTES-RED: rgb(140,38,51);
+    --COYOTES-TAN: rgb(226,214,181);
+    /* 54 | Vegas Golden Knights */
+    --GOLDENKNIGHTS-GOLD: rgb(185,151,91);
+    --GOLDENKNIGHTS-GRAY: rgb(51,63,72);
+    --GOLDENKNIGHTS-RED: rgb(200,16,46);
+    --GOLDENKNIGHTS-BLACK: rgb(35,31,32);
+    /* 55 | Seattle Kraken */
+    --KRAKEN-SEABLUE: rgb(0,22,40);
+    --KRAKEN-ICEBLUE: rgb(153,217,217);
+    --KRAKEN-BOUNDLESSBLUE: rgb(53,84,100);
+    --KRAKEN-SHADOWBLUE: rgb(104,162,185);
+    --KRAKEN-RED: rgb(233,7,43);
   }
+
+ 
+
+
 
   @font-face { font-family: NHL; src: url('../../Assets/fonts/NHL.ttf'); } 
   @font-face { font-family: NHL; font-weight: bold; src: url('../../Assets/fonts/NHL.ttf');}
@@ -12,8 +122,6 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    background-color: var(--silver);
-    border-bottom: 10px solid var(--black);
     z-index:3;
 }
 
@@ -65,7 +173,6 @@ nav a.active.navbar-nav {
 }
 
 .NavBar a {
-    color: white;
     text-decoration: none;
 }
 .ml-auto a.active {
@@ -76,14 +183,11 @@ nav a.active.navbar-nav {
     padding-top: 20px;
     display: inline;
     font-size: 100px;
-    font-family: NHL, Arial, Helvetica, sans-serif;
-    -webkit-text-stroke: 3px var(--black);
 }
 #tinyHeader {
     padding-left: 3px;
     font-size: 75px;
-    color: var(--black);
-    -webkit-text-stroke: 3px var(--white);
+
 }
 .ml-auto {
     position: absolute;
@@ -94,3 +198,532 @@ nav a.active.navbar-nav {
 @media (max-width: 479px) {
 
 }
+/* DEFAULT STYLING ------------- */
+.NavBar.default {
+    background-color: var(--silver);
+    border-bottom: 10px solid var(--black);
+}
+.NavBar.default h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--black);
+}
+.NavBar.default a {
+    color: white;
+}
+.NavBar.default #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* DEVILS(1) STYLING ------------- */
+.NavBar.team-1 {
+    background-color: var(--DEVILS-RED);
+    border-bottom: 10px solid var(--DEVILS-BLACK);
+}
+.NavBar.team-1 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--DEVILS-BLACK);
+}
+.NavBar.team-1 a {
+    color: var(--white);
+}
+.NavBar.team-1 #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* ISLANDERS(2) STYLING ------------- */
+.NavBar.team-2 {
+    background-color: var(--ISLANDERS-BLUE);
+    border-bottom: 10px solid var(--ISLANDERS-ORANGE);
+}
+.NavBar.team-2 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--ISLANDERS-ORANGE);
+}
+.NavBar.team-2 a {
+    color: var(--white);
+}
+.NavBar.team-2 #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* RANGERS(3) STYLING ------------- */
+.NavBar.team-3 {
+    background-color: var(--RANGERS-BLUE);
+    border-bottom: 10px solid var(--RANGERS-RED);
+}
+.NavBar.team-3 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--RANGERS-RED);
+}
+.NavBar.team-3 a {
+    color: var(--white);
+}
+.NavBar.team-3 #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* FLYERS(4) STYLING ------------- */
+.NavBar.team-4 {
+    background-color: var(--FLYERS-ORANGE);
+    border-bottom: 10px solid var(--FLYERS-BLACK);
+}
+.NavBar.team-4 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--FLYERS-BLACK);
+}
+.NavBar.team-4 a {
+    color: var(--white);
+}
+.NavBar.team-4 #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* PENGUINS(5) STYLING ------------- */
+.NavBar.team-5 {
+    background-color: var(--PENGUINS-BLACK);
+    border-bottom: 10px solid var(--PENGUINS-YELLOW);
+}
+.NavBar.team-5 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--PENGUINS-YELLOW);
+}
+.NavBar.team-5 a {
+    color: var(--white);
+}
+.NavBar.team-5 #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* BRUINS(6) STYLING ------------- */
+.NavBar.team-6 {
+    background-color: var(--BRUINS-GOLD);
+    border-bottom: 10px solid var(--BRUINS-BLACK);
+}
+.NavBar.team-6 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--BRUINS-BLACK);
+}
+.NavBar.team-6 a {
+    color: var(--white);
+}
+.NavBar.team-6 #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* SABRES(7) STYLING ------------- */
+.NavBar.team-7 {
+    background-color: var(--SABRES-BLUE);
+    border-bottom: 10px solid var(--SABRES-GOLD);
+}
+.NavBar.team-7 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--SABRES-GOLD);
+}
+.NavBar.team-7 a {
+    color: var(--white);
+}
+.NavBar.team-7 #tinyHeader {
+    color: var(--SABRES-BLUE);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* CANADIENS(8) STYLING ------------- */
+.NavBar.team-8 {
+    background-color: var(--CANADIENS-RED);
+    border-bottom: 10px solid var(--CANADIENS-BLUE);
+}
+.NavBar.team-8 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--CANADIENS-BLUE);
+}
+.NavBar.team-8 a {
+    color: var(--white);
+}
+.NavBar.team-8 #tinyHeader {
+    color: var(--CANADIENS-BLUE);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* SENATORS(9) STYLING ------------- */
+.NavBar.team-9 {
+    background-color: var(--SENATORS-RED);
+    border-bottom: 10px solid var(--SENATORS-GOLD);
+}
+.NavBar.team-9 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--black);
+}
+.NavBar.team-9 a {
+    color: var(--white);
+}
+.NavBar.team-9 #tinyHeader {
+    color: var(--SENATORS-GOLD);
+    -webkit-text-stroke: 3px var(--black);
+}
+/* LEAFS(10) STYLING ------------- */
+.NavBar.team-10 {
+    background-color: var(--white);
+    border-bottom: 10px solid var(--LEAFS-BLUE);
+}
+.NavBar.team-10 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--LEAFS-BLUE);
+}
+.NavBar.team-10 a {
+    color: var(--LEAFS-BLUE);
+}
+.NavBar.team-10 #tinyHeader {
+    color: var(--white);
+    -webkit-text-stroke: 3px var(--LEAFS-BLUE);
+}
+/* HURRICANES(12) STYLING ------------- */
+.NavBar.team-12 {
+    background-color: var(--HURRICANES-RED);
+    border-bottom: 10px solid var(--HURRICANES-GREY);
+}
+.NavBar.team-12 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--HURRICANES-GREY);
+}
+.NavBar.team-12 a {
+    color: var(--white);
+}
+.NavBar.team-12 #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--HURRICANES-GREY);
+}
+/* PANTHERS(13) STYLING ------------- */
+.NavBar.team-13 {
+    background-color: var(--PANTHERS-RED);
+    border-bottom: 10px solid var(--PANTHERS-BLUE);
+}
+.NavBar.team-13 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--PANTHERS-TAN);
+}
+.NavBar.team-13 a {
+    color: var(--white);
+}
+.NavBar.team-13 #tinyHeader {
+    color: var(--PANTHERS-TAN);
+    -webkit-text-stroke: 3px var(--PANTHERS-BLUE);
+}
+/* LIGHTNING(14) STYLING ------------- */
+.NavBar.team-14 {
+    background-color: var(--LIGHTNING-BLUE);
+    border-bottom: 10px solid var(--white);
+}
+.NavBar.team-14 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--LIGHTNING-BLUE);
+}
+.NavBar.team-14 a {
+    color: var(--white);
+}
+.NavBar.team-14 #tinyHeader {
+    color: var(--white);
+    -webkit-text-stroke: 3px var(--LIGHTNING-BLUE);
+}
+/* CAPITALS(15) STYLING ------------- */
+.NavBar.team-15 {
+    background-color: var(--CAPITALS-RED);
+    border-bottom: 10px solid var(--CAPITALS-BLUE);
+}
+.NavBar.team-15 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--CAPITALS-BLUE);
+}
+.NavBar.team-15 a {
+    color: var(--white);
+}
+.NavBar.team-15 #tinyHeader {
+    color: var(--CAPITALS-BLUE);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* BLACKHAWKS(16) STYLING ------------- */
+.NavBar.team-16 {
+    background-color: var(--white);
+    border-bottom: 10px solid var(--BLACKHAWKS-RED);
+}
+.NavBar.team-16 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--BLACKHAWKS-RED);
+}
+.NavBar.team-16 a {
+    color: var(--black);
+}
+.NavBar.team-16 #tinyHeader {
+    color: var(--BLACKHAWKS-RED);
+    -webkit-text-stroke: 3px var(--black);
+}
+/* REDWINGS(17) STYLING ------------- */
+.NavBar.team-17 {
+    background-color: var(--REDWINGS-RED);
+    border-bottom: 10px solid var(--white);
+}
+.NavBar.team-17 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--white);
+}
+.NavBar.team-17 a {
+    color: var(--white);
+}
+.NavBar.team-17 #tinyHeader {
+    color: var(--REDWINGS-RED);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* PREDATORS(18) STYLING ------------- */
+.NavBar.team-18 {
+    background-color: var(--PREDATORS-GOLD);
+    border-bottom: 10px solid var(--PREDATORS-BLUE);
+}
+.NavBar.team-18 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--white);
+}
+.NavBar.team-18 a {
+    color: var(--PANTHERS-BLUE);
+}
+.NavBar.team-18 #tinyHeader {
+    color: var(--white);
+    -webkit-text-stroke: 3px var(--PREDATORS-BLUE);
+}
+/* BLUES(19) STYLING ------------- */
+.NavBar.team-19 {
+    background-color: var(--BLUES-BLUE);
+    border-bottom: 10px solid var(--BLUES-YELLOW);
+}
+.NavBar.team-19 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--BLUES-YELLOW);
+}
+.NavBar.team-19 a {
+    color: var(--white);
+}
+.NavBar.team-19 #tinyHeader {
+    color: var(--BLUES-YELLOW);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* FLAMES(20) STYLING ------------- */
+.NavBar.team-20 {
+    background-color: var(--FLAMES-RED);
+    border-bottom: 10px solid var(--FLAMES-YELLOW);
+}
+.NavBar.team-20 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--FLAMES-YELLOW);
+}
+.NavBar.team-20 a {
+    color: var(--white);
+}
+.NavBar.team-20 #tinyHeader {
+    color: var(--FLAMES-YELLOW);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* AVALANCHE(21) STYLING ------------- */
+.NavBar.team-21 {
+    background-color: var(--AVALANCHE-BURGUNDY);
+    border-bottom: 10px solid var(--AVALANCHE-BLUE);
+}
+.NavBar.team-21 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--AVALANCHE-BLUE);
+}
+.NavBar.team-21 a {
+    color: var(--AVALANCHE-SILVER);
+}
+.NavBar.team-21 #tinyHeader {
+    color: var(--AVALANCHE-BLUE);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* OILERS(22) STYLING ------------- */
+.NavBar.team-22 {
+    background-color: var(--OILERS-ORANGE);
+    border-bottom: 10px solid var(--OILERS-BLUE);
+}
+.NavBar.team-22 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--OILERS-BLUE);
+}
+.NavBar.team-22 a {
+    color: var(--white);
+}
+.NavBar.team-22 #tinyHeader {
+    color: var(--OILERS-BLUE);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* CANUCKS(23) STYLING ------------- */
+.NavBar.team-23 {
+    background-color: var(--CANUCKS-BLUE);
+    border-bottom: 10px solid var(--CANUCKS-GREEN);
+}
+.NavBar.team-23 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--CANUCKS-GREEN);
+}
+.NavBar.team-23 a {
+    color: var(--white);
+}
+.NavBar.team-23 #tinyHeader {
+    color: var(--CANUCKS-GREEN);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* DUCKS(24) STYLING ------------- */
+.NavBar.team-24 {
+    background-color: var(--DUCKS-ORANGE);
+    border-bottom: 10px solid var(--DUCKS-GOLD);
+}
+.NavBar.team-24 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--DUCKS-GOLD);
+}
+.NavBar.team-24 a {
+    color: var(--DUCKS-SILVER);
+}
+.NavBar.team-24 #tinyHeader {
+    color: var(--DUCKS-GOLD);
+    -webkit-text-stroke: 3px var(--black);
+}
+/* STARS(25) STYLING ------------- */
+.NavBar.team-25 {
+    background-color: var(--STARS-GREEN);
+    border-bottom: 10px solid var(--STARS-SILVER);
+}
+.NavBar.team-25 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--white);
+}
+.NavBar.team-25 a {
+    color: var(--STARS-SILVER);
+}
+.NavBar.team-25 #tinyHeader {
+    color: var(--white);
+    -webkit-text-stroke: 3px var(--black);
+}
+/* KINGS(26) STYLING ------------- */
+.NavBar.team-26 {
+    background-color: var(--black);
+    border-bottom: 10px solid var(--KINGS-SILVER);
+}
+.NavBar.team-26 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--white);
+}
+.NavBar.team-26 a {
+    color: var(--KINGS-SILVER);
+}
+.NavBar.team-26 #tinyHeader {
+    color: var(--white);
+    -webkit-text-stroke: 3px var(--KINGS-SILVER);
+}
+/* SHARKS(28) STYLING ------------- */
+.NavBar.team-28 {
+    background-color: var(--SHARKS-TEAL);
+    border-bottom: 10px solid var(--SHARKS-ORANGE);
+}
+.NavBar.team-28 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--black);
+}
+.NavBar.team-28 a {
+    color: var(--white);
+}
+.NavBar.team-28 #tinyHeader {
+    color: var(--black);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* BLUEJACKETS(29) STYLING ------------- */
+.NavBar.team-29 {
+    background-color: var(--BLUEJACKETS-BLUE);
+    border-bottom: 10px solid var(--BLUEJACKETS-RED);
+}
+.NavBar.team-29 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--BLUEJACKETS-SILVER);
+}
+.NavBar.team-29 a {
+    color: var(--white);
+}
+.NavBar.team-29 #tinyHeader {
+    color: var(--BLUEJACKETS-SILVER);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* WILD(30) STYLING ------------- */
+.NavBar.team-30 {
+    background-color: var(--WILD-GREEN);
+    border-bottom: 10px solid var(--WILD-TAN);
+}
+.NavBar.team-30 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--WILD-RED);
+}
+.NavBar.team-30 a {
+    color: var(--WILD-GOLD);
+}
+.NavBar.team-30 #tinyHeader {
+    color: var(--WILD-RED);
+    -webkit-text-stroke: 3px var(--WILD-TAN);
+}
+/* JETS(52) STYLING ------------- */
+.NavBar.team-52 {
+    background-color: var(--JETS-DARKBLUE);
+    border-bottom: 10px solid var(--JETS-MAROON);
+}
+.NavBar.team-52 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--JETS-BLUE);
+}
+.NavBar.team-52 a {
+    color: var(--white);
+}
+.NavBar.team-52 #tinyHeader {
+    color: var(--JETS-RED);
+    -webkit-text-stroke: 3px var(--JETS-BLUE);
+}
+/* COYOTES(53) STYLING ------------- */
+.NavBar.team-53 {
+    background-color: var(--COYOTES-RED);
+    border-bottom: 10px solid var(--COYOTES-TAN);
+}
+.NavBar.team-53 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--COYOTES-TAN);
+}
+.NavBar.team-53 a {
+    color: var(--white);
+}
+.NavBar.team-53 #tinyHeader {
+    color: var(--COYOTES-TAN);
+    -webkit-text-stroke: 3px var(--white);
+}
+/* GOLDENKNIGHTS(54) STYLING ------------- */
+.NavBar.team-54 {
+    background-color: var(--GOLDENKNIGHTS-GRAY);
+    border-bottom: 10px solid var(--GOLDENKNIGHTS-GOLD);
+}
+.NavBar.team-54 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--GOLDENKNIGHTS-GOLD);
+}
+.NavBar.team-54 a {
+    color: var(--white);
+}
+.NavBar.team-54 #tinyHeader {
+    color: var(--GOLDENKNIGHTS-GOLD);
+    -webkit-text-stroke: 3px var(--GOLDENKNIGHTS-BLACK);
+}
+/* KRAKEN(55) STYLING ------------- */
+.NavBar.team-55 {
+    background-color: var(--KRAKEN-SEABLUE);
+    border-bottom: 10px solid var(--KRAKEN-RED);
+}
+.NavBar.team-55 h1 {
+    font-family: NHL, Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 3px var(--KRAKEN-BOUNDLESSBLUE);
+}
+.NavBar.team-55 a {
+    color: var(--KRAKEN-ICEBLUE);
+}
+.NavBar.team-55 #tinyHeader {
+    color: var(--KRAKEN-SHADOWBLUE);
+    -webkit-text-stroke: 3px var(--KRAKEN-ICEBLUE);
+}
+

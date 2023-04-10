@@ -2,3 +2,21 @@
     font-size: 2rem;
     font-weight: 600;
 }
+.Home Button {
+    margin: 15px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    padding: 5px 25px;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+}
+.Home Button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.Home h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}

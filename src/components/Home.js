@@ -10,8 +10,8 @@ function Home({user, setUser}) {
 
     if (localStorage.getItem("token") == null) {
         return(
-            <div className="main-content">
-            <p>PLEASE LOG IN FIRST</p>
+            <div className="Home main-content">
+            <h2>PLEASE LOG IN FIRST</h2>
             <div className="Home-button-div">
                     <Button onClick={() => navigate("/login", {replace: true})}>Login</Button>
                     <Button onClick={() => navigate("/register", {replace: true})}>Sign Up</Button>
@@ -35,11 +35,11 @@ function Home({user, setUser}) {
             <div>
                 <div className="Home watchedTeams">
                     <p className="home-title">Watched Teams</p>
-                    {Object.keys(user.watchedTeams).map(key=> (<WatchedTeamsCard key={key} user={user} setUser={setUser} team={user.watchedTeams[key]} />))}
+                    {user.watchedTeams && Object.keys(user.watchedTeams).map(key=> (<WatchedTeamsCard key={key} user={user} setUser={setUser} team={user.watchedTeams[key]} />))}
                 </div>
                 <div className="Home watchedTeams">
                     <p className="home-title">Favorite Players</p>
-                    {Object.keys(user.favPlayers).map(key=> (<PlayerCard key={key} user={user} setUser={setUser} player={user.favPlayers[key]} />))}
+                    {user.favPlayers && Object.keys(user.favPlayers).map(key=> (<PlayerCard key={key} user={user} setUser={setUser} player={user.favPlayers[key]} />))}
                 </div>
             </div>
             

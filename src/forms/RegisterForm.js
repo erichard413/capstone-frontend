@@ -5,6 +5,7 @@ import NHLstatsAPI from "../api";
 import jwt_decode from 'jwt-decode';
 import {useNavigate} from 'react-router-dom';
 import validateEmail from "../helpers/emailValidator";
+import getWatchedTeams from "../helpers/getWatchedTeams";
 
 import {
     Button,
@@ -23,7 +24,7 @@ function RegisterForm({setUser, teams}) {
         firstName: "",
         lastName: "",
         email: "",
-        favTeamId: "1"
+        favTeamId: "24"
     }
   const [formData, setFormData] = useState(initialState);
 
@@ -71,6 +72,8 @@ function RegisterForm({setUser, teams}) {
           setFormData(initialState);
           let data = jwt_decode(NHLstatsAPI.token);
           let userData = await NHLstatsAPI.getUser(data.username);
+          let watchedTeams = await getWatchedTeams(userData);
+          userData.watchedTeams = watchedTeams;
           userData.favPlayers = [];
           console.log('got user: ',  userData)
           setUser(userData);
