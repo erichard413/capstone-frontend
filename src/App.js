@@ -17,11 +17,14 @@ import Standings from './components/Teams/Standings'
 import NHLstatsAPI from './api';
 import getFavPlayers from './helpers/getFavPlayers';
 import getWatchedTeams from './helpers/getWatchedTeams';
+import SeasonGames from './components/Games/SeasonGames';
+import FourOhFour from './components/404';
 
 function App() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
   const [teams, setTeams] = useState();
+  const [selectedSeason, setSelectedSeason] = useState();
   
   // grab token from LS on page load, grab user on page load, get teams on page load.
   useEffect(()=>{
@@ -40,7 +43,6 @@ function App() {
       let watchedTeams = await getWatchedTeams(userData);
       userData.watchedTeams = watchedTeams;
       userData.favPlayers = favPlayers;
-      console.log('got user: ',  userData);
       setUser(userData);
     }
     if (NHLstatsAPI.token) {
@@ -61,7 +63,6 @@ function App() {
         userData.favPlayers=await getFavPlayers(userData.username);
         let watchedTeams = await getWatchedTeams(userData);
         userData.watchedTeams = watchedTeams;
-        console.log('got user: ',  userData)
         setUser(userData);
     }
     if (NHLstatsAPI.token) {
@@ -112,8 +113,10 @@ function App() {
             <Route exact path="/allplayers" element={<AllPlayers user={user} setUser={setUser}/>} />
             <Route exact path="/players/:playerId" element={<PlayerDetail />} />
             <Route exact path="/myplayers" element={<FavPlayers user={user} setUser={setUser} />} />
-            <Route exact path="/teams/:teamId" element={<TeamDetail user={user} setUser={setUser}/>} />
+            <Route exact path="/teams/:teamId" element={<TeamDetail user={user} setUser={setUser} selectedSeason={selectedSeason} setSelectedSeason={setSelectedSeason}/>} />
             <Route exact path="/standings" element={<Standings />} />
+            <Route exact path="/games/:id/:season" element={<SeasonGames selectedSeason={selectedSeason} setSelectedSeason={setSelectedSeason} />} />
+            <Route exact path="/404" element={<FourOhFour />} />
             <Route path="*" element={<Navigate to="/" replace />}/>
         </Routes>
     </div>

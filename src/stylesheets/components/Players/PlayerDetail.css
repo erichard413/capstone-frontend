@@ -46,3 +46,87 @@ h2 {
     padding-bottom: 10px;
     padding-left: 0;
 }
+.SkaterStats-mobile {
+    display: none;
+}
+@media (max-width: 479px) {
+    .PlayerDetail {
+        width: 100%;
+        padding: 0px;
+    }
+    .PlayerDetail h2 {
+        font-size: 2.5rem;
+        padding-top: 10px;
+    }
+    .PlayerDetail .top-div {
+        display: inline-block;
+        /* outline: 1px solid red; */
+        width: 100%;
+    }
+    .PlayerDetail .top-right-div {
+        display: inline-block;
+        /* outline: 1px solid blue; */
+        padding-left: 15px;
+        width: 40%;
+    }
+    .PlayerDetail .top-right-div ul {
+        padding: 0px;
+    }
+    .PlayerDetail .top-left-div {
+        width: 150px;
+        height: 150px;
+    }
+    .PlayerDetail .top-left-div img {
+        width: 150px;
+        height: 150px;
+    }
+    .PlayerDetail .bio-div ul {
+        padding: 0px;
+        margin: 0px;
+    }
+    .PlayerDetail .bio-div li {
+        text-align: left;
+        padding-left: 5%;
+    }
+    .PlayerDetail .SkaterStats.full {
+        display: none;
+    }
+    .PlayerDetail .SkaterStats-mobile {
+        display: inline-block;
+        width: 95%;
+        /* outline: 1px solid blue; */
+    }
+    .PlayerDetail .SkaterStats-mobile th {
+        font-size: .8rem;
+    }
+    .PlayerDetail .SkaterStats-mobile td {
+        font-size: 1.3rem;
+    }
+    .PlayerDetail .SkaterStats-mobile tr {
+        /* outline: 1px solid red; */
+        margin: 0px;
+    }
+    .PlayerDetail .stats-div {
+        width: 100vw;
+    }
+    .PlayerDetail .SkaterStats-mobile .mobile-table {
+        background: var(--silver);
+        border-radius: 15px;
+        padding: 2px;
+        width: 100%;
+    }
+    .PlayerDetail .SkaterStats-mobile .team-league-td {
+        width: 130px;
+    }
+    .PlayerDetail .SkaterStats-mobile .advanced-stats-table td {
+        font-size: .9rem;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .PlayerDetail .SkaterStats-mobile .advanced-stats-table th {
+        font-size: .7rem;
+        padding-left: 2px;
+        padding-right: 2px;
+        text-align: center;
+    }
+}

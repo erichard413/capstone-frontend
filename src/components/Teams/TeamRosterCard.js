@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../stylesheets/components/Teams/TeamRosterCard.css';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import headshot from '../../Assets/images/default_profile_picture.png';
 
 
@@ -26,10 +26,9 @@ function TeamRosterCard({player}) {
         <div className="Team-roster-card-div" onClick={e => {handleClick(player.id)}}>
             <p className="jersey-number">#{player.primaryNumber}</p>
             
-            <p><img src={imgURL} alt={`image-${player.fullName}`} onError={replaceImage}/></p>
+            <p className="p-image"><img src={imgURL} alt={`${player.fullName}`} onError={replaceImage}/></p>
             <p className="full-name">{player.fullName}</p>
             <p className="position">{player.primaryPosition.name}</p>
-            <p className="captain">{player.captain && "Captain"}{player.alternateCaptain && "Alternate Captain"}</p>
         </div>
     )
 }

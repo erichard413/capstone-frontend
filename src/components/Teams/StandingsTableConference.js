@@ -9,7 +9,7 @@ function StandingsTableConference({standings}) {
 
     return (
         <div className="StandingsTable">
-            <h1>Conference Standings</h1> 
+            <h2>Conference Standings</h2> 
            {Object.keys(conferenceStandings).map(d => (
             <table key={d}>
                 <caption>{d} Conference</caption>

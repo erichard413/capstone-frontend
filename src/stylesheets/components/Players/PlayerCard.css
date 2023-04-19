@@ -37,3 +37,26 @@
     margin: 0px;
     font-weight: 600;
 }
+@media (max-width: 479px) {
+    .Players {
+        width: 100%;
+    }
+    .Players .PlayerCard img {
+        height: 60%;
+        width: 60%;
+    }
+    .Players .PlayerCard {
+        display: inline-block;
+        background-color: var(--silver);
+        border-radius: 15px;
+        padding-top: 5px;
+        margin: 5px;
+        height: 100%;
+    }
+    .Players .PlayerCard p {
+        width: 100%;
+        font-size: .7rem;
+        overflow-y: hidden;
+        height: 1rem;
+    }
+}

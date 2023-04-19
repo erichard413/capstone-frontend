@@ -1,8 +1,12 @@
+
 .Profile h2 {
     font-size: 2rem;
     margin-bottom: 10px;
 }
-
+.Profile form{
+    width: 300px;
+    margin: auto;
+}
 .Profile .row{
     width: 750px;
     margin: auto;
@@ -52,4 +56,10 @@
     background-color: black;
     color: white;
     cursor: pointer;
+}
+@media (max-width: 479px) {
+    .Profile {
+        width: 100%;
+        text-align: center;
+    }
 }

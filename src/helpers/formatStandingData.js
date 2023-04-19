@@ -3,7 +3,7 @@ function formatStandingData(data, format) {
         // create one array that holds an object for each team record, then sort based on league rank.
         case "League": {
             const output = [];
-            data.map(d => output.push(...d.teamRecords));
+            data.forEach(d => output.push(...d.teamRecords));
             let sorted = output.sort((a,b)=> (+a.leagueRank > +b.leagueRank) ? 1 : ((+b.leagueRank > +a.leagueRank) ? -1 : 0));
             return sorted;
         }
@@ -11,7 +11,7 @@ function formatStandingData(data, format) {
         case "Conference": {
             const eastConf = [];
             const westConf = [];
-            data.map(d => {
+            data.forEach(d => {
                 if (d.conference.id === 6 || d.conference.name === "Eastern") {
                     eastConf.push(...d.teamRecords);
                 }
@@ -50,28 +50,28 @@ function formatStandingData(data, format) {
                 pacificTop3.push(pacific.shift());
             }
             // all other teams will either go in wild cards, or conference.
-            metro.map(t => {
+            metro.forEach(t => {
                 if (+t.wildCardRank <= 2 && +t.wildCardRank !== 0) {
                     eastWildCards.push(t);
                 } else {
                     eastConf.push(t);
                 }
             });
-            atlantic.map(t => {
+            atlantic.forEach(t => {
                 if (+t.wildCardRank <= 2 && +t.wildCardRank !== 0) {
                     eastWildCards.push(t);
                 } else {
                     eastConf.push(t);
                 }
             });
-            central.map(t => {
+            central.forEach(t => {
                 if (+t.wildCardRank <= 2 && +t.wildCardRank !== 0) {
                     westWildCards.push(t);
                 } else {
                     westConf.push(t);
                 }
             });
-            pacific.map(t => {
+            pacific.forEach(t => {
                 if (+t.wildCardRank <= 2 && +t.wildCardRank !== 0) {
                     westWildCards.push(t);
                 } else {

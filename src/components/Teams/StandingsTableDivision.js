@@ -7,7 +7,7 @@ function StandingsTableDivision({standings}) {
     
     return (
         <div className="StandingsTable">
-            <h1>Division Standings</h1> 
+            <h2>Division Standings</h2> 
            {standings.map(d => (
             <table key={d.division.name}>
                 <thead>

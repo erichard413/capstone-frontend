@@ -7,6 +7,10 @@
 .Team .name-img-div {
     display: inline-block;
 }
+.Team .top-container img {
+    width: 300px;
+    height: 300px;
+}
 .Team .basic-details-div {
     height: 100%;
     display: inline-block;
@@ -86,6 +90,7 @@
     font-weight: 600;
 }
 .Team button {
+    display: inline-block;
     margin-top: 15px;
     font-family: Dosis, Arial, Helvetica, sans-serif;
     padding: 5px 25px;
@@ -98,4 +103,133 @@
     background-color: black;
     color: white;
     cursor: pointer;
+}
+.Team Select {
+    display: inline-block;
+    margin: 0px;
+    width: 100px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    border: 2px solid black; 
+}
+.season-select {
+    text-align: center;
+}
+.season-select button {
+    display: inline-block;
+}
+.season-select form {
+    display: inline-block;
+}
+.season-select label {
+    font-weight: 600;
+}
+.Team .basic-details-div button {
+    margin: 10px;
+}
+@media (max-width: 479px) {
+    .Team {
+        width: 100%;
+    }
+    .Team h2 {
+        font-size: 3rem;
+    }
+    .Team div {
+        margin: 0px;
+    }
+    .Team .top-container {
+        /* outline: 1px solid grey; */
+        height: 230px;
+        width: 92%;
+    }
+    .Team .top-container img {
+        width: 230px;
+    }
+    .Team .name-img-div {
+        display: inline-block;
+        position: relative;
+        top: -55px;
+        left: -30px;
+        padding: 0px;
+        margin: 0px;
+        /* outline: 1px solid black; */
+        height: 200px;
+        width: 40%;
+    }
+    .Team .basic-details-div {
+        padding: 0px;
+        margin: 0px;
+        display: inline-block;
+        position: relative;
+        right: -28px;
+        /* outline: 1px solid blue; */
+        width: 60%;
+    }
+    .Team .basic-details-div ul {
+        text-align: left;
+        padding: 2px;
+    }
+    .Team .Team-stats-div {
+        width: 100%;
+        margin: 1px;
+    }
+    .Team .TeamStats {
+        margin: 0px;
+    }
+    .Team .Team-roster-div {
+        width: 95%;
+        margin: 0px;
+    }
+    .Team .Team-roster-card-div {
+        width: 100%;
+        height: 100px;
+        background-color: var(--silver);
+        border-radius: 15px;
+        margin: 5px;
+    }
+    .Team .Team-roster-card-div img {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        mix-blend-mode: normal;
+    }
+    .Team .Team-roster-card-div p {
+        display: inline-block;
+
+    }
+    .Team .Team-roster-card-div .jersey-number {
+        font-size: 1.5rem;
+        position: absolute;
+        padding-top: 25px;
+        right: 20px;
+    }
+    .Team .Team-roster-card-div .p-image {
+        display: inline-block;
+        position: absolute;
+        left: 15px;
+        padding-top: 5px;
+    }
+    .Team .Team-roster-card-div .full-name {
+        position: absolute;
+        padding-top: 25px;
+        font-size: 1.1rem;
+        left: 110px;
+    }
+    .Team .Team-roster-card-div .position {
+        position: absolute;
+        font-size: .8rem;
+        padding-top: 50px;
+        left: 110px;
+    }
+    .Team .top-container button:first-of-type {
+        display: inline-block;
+        position: absolute;
+        top: 180px;
+        left: -160px;
+    }
+    .Team .top-container button:nth-of-type(2) {
+        display: inline-block;
+        position: absolute;
+        top: 180px;
+        right: 10px;
+    }
 }

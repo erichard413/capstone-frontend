@@ -89,8 +89,8 @@ function EditProfileForm({user, setUser, teams}) {
     return (
         <div className="EditProfileForm">
         {flashMsg.success && <p className="FlashMsg-success">{flashMsg.success}</p>}
-        <Form className="col-12" onSubmit={e=> e.preventDefault()}>
-          <div className="row h-100 justify-content-center align-items-center">
+        <Form className="" onSubmit={e=> e.preventDefault()}>
+          <div className="">
           {flashMsg.firstName && <p className="FlashMsg">{flashMsg.firstName}</p>}
           <FormGroup className="form-group">
             <Label className="form-label" for="type">First Name:</Label>

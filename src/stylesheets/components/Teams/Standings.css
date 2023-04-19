@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 .standings-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin: 5px;
 }
@@ -45,4 +45,8 @@
 .Standings table td:first-child {
     text-align: left;
     padding-left: 25px;
+}
+.Standings h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }

@@ -49,7 +49,7 @@ function PlayerDetail() {
             <h2>{player.fullName}</h2>
             <div className="top-div">
                 <div className="top-left-div">
-                    <img src={imgURL} onError={replaceImage}/>
+                    <img src={imgURL} alt={player.id} onError={replaceImage}/>
                 </div>
                 <div className="top-right-div">
                      <ul>

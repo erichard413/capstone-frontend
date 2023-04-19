@@ -26,4 +26,34 @@
 .TeamCard p {
     margin: 5px;
 }
+@media (max-width: 479px) {
+    .Teams {
+        width: 100%;
+        text-align: center;
+    }
+    .TeamCard p {
+        display: block;
+        position: relative;
+        padding-bottom: 15px;
+        margin: 0px;
+        font-size: 1.5rem;
+        /* outline: 1px solid blue; */
+    }
+    .TeamCard {
+        margin-right: 5px;
+        margin-left: 5px;
+        background-color: var(--silver);
+        border-radius: 15px;
+        height: 200px;
+        width: 40%;
+        overflow-y: hidden;
+        margin-bottom: 0px;
+    }
+    .TeamCard img {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        /* outline: 1px solid teal; */
+    }
+}
 

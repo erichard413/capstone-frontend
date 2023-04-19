@@ -1,0 +1,645 @@
+.Playoffs Button {
+    margin-top: 15px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    padding: 5px 25px;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+}
+.Playoffs Select {
+    display: inline-block;
+    margin: 0px;
+    width: 100px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    border: 2px solid black; 
+}
+.Playoffs Button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.Playoffs h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.Playoffs img {
+    z-index: -1;
+    height: 70px;
+    width: 70px;
+    margin: 0px;
+    mix-blend-mode: multiply;
+}
+.Playoffs-table {
+    display: inline-block;
+    /* border: 1px solid blue; */
+    height: 70vh;
+    width: 100%;
+}
+.Playoffs-Winner {
+    z-index: -1;
+    display: inline-block;
+    position: absolute;
+    background: url("../../../Assets/images/stanley-cup.png") no-repeat center;
+    margin: 0px;
+    left: 44.9%;
+    text-align: center;
+    top: 230px;
+    width: 200px;
+    height: 350px;
+    /* outline: 1px solid grey; */
+}
+.Playoffs-Winner img {
+    padding-top: 130px;
+    height: 150px;
+    width: 150px;
+    margin: 0px;
+    mix-blend-mode: normal;
+}
+.Playoffs-Winner p {
+    padding-top: 15px;
+    display: inline-block;
+    position: absolute;
+    left: 21%;
+    top: 80%;
+    margin: 0px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+/* Playoffs - results -------*/
+.Playoffs .results-east1 {
+    text-align: right;
+    margin: 5px;
+    height: 150px;
+    display: inline-block;
+    position: absolute;
+    font-size: .6rem;
+    font-weight: 600;
+    left: 24%;
+    width: 74px;
+    /* outline: 1px solid blue; */
+}
+.Playoffs .results-east1 > p {
+    display: inline-block;
+    padding-top: 66px;
+    margin: 0px;
+}
+.Playoffs .results-east2-1 {
+    margin-top: 70px;
+    margin-bottom: 150px;
+    text-align: left;
+    height: 200px;
+    display: inline-block;
+    position: absolute;
+    font-size: .6rem;
+    font-weight: 600;
+    left: 33%;
+    width: 74px;
+    /* outline: 1px solid blue; */
+}
+.Playoffs .results-east2-1 > p {
+    padding-top: 70px;
+    display: inline-block;
+    margin: 0px;
+}
+.Playoffs .results-east2-2 {
+    margin-top: 82.5px;
+    text-align: left;
+    height: 200px;
+    display: inline-block;
+    position: absolute;
+    font-size: .6rem;
+    font-weight: 600;
+    left: 33%;
+    width: 74px;
+    /* outline: 1px solid blue; */
+}
+.Playoffs .results-east2-2 > p {
+    padding-top: 70px;
+    display: inline-block;
+    margin: 0px;
+}
+.Playoffs .results-east3 {
+    margin-top: 238px;
+    text-align: left;
+    height: 200px;
+    display: inline-block;
+    position: absolute;
+    font-size: .6rem;
+    font-weight: 600;
+    left: 40.7%;
+    width: 74px;
+    /* outline: 1px solid blue; */
+}
+.Playoffs .results-east3 > p {
+    padding-top: 70px;
+    display: inline-block;
+    margin: 0px;
+}
+.Playoffs .results-west3 {
+    margin-top: 238px;
+    text-align: left;
+    height: 200px;
+    display: inline-block;
+    position: absolute;
+    font-size: .6rem;
+    font-weight: 600;
+    right: 39.3%;
+    width: 74px;
+    /* outline: 1px solid blue; */
+}
+.Playoffs .results-west3 > p {
+    padding-top: 70px;
+    display: inline-block;
+    margin: 0px;
+}
+.Playoffs .results-west2-1 {
+    margin-top: 70px;
+    margin-bottom: 150px;
+    text-align: left;
+    height: 200px;
+    display: inline-block;
+    position: absolute;
+    font-size: .6rem;
+    font-weight: 600;
+    right: 31.7%;
+    width: 74px;
+    /* outline: 1px solid blue; */
+}
+.Playoffs .results-west2-1 > p {
+    padding-top: 70px;
+    display: inline-block;
+    margin: 0px;
+}
+.Playoffs .results-west2-2 {
+    margin-top: 82.5px;
+    text-align: left;
+    height: 200px;
+    display: inline-block;
+    position: absolute;
+    font-size: .6rem;
+    font-weight: 600;
+    right: 31.7%;
+    width: 74px;
+    /* outline: 1px solid blue; */
+}
+.Playoffs .results-west2-2 > p {
+    padding-top: 70px;
+    display: inline-block;
+    margin: 0px;
+}
+.Playoffs .results-west1 {
+    text-align: right;
+    margin: 5px;
+    height: 150px;
+    display: inline-block;
+    position: absolute;
+    font-size: .6rem;
+    font-weight: 600;
+    right: 25.1%;
+    width: 74px;
+    /* outline: 1px solid blue; */
+}
+.Playoffs .results-west1 > p {
+    display: inline-block;
+    padding-top: 66px;
+    margin: 0px;
+}
+
+/* Playoffs Cirlces ----------*/
+.Playoffs-circle {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 2px solid gray;
+    border-radius: 50%;
+}
+.Playoffs-circle > .wins {
+    font-weight: 600;
+    font-size: .8rem;
+    padding-left: 75px;
+    padding-top: 4px;
+}
+/* ROUND 1 LEFT ------------- */
+.Playoffs-rd-1 {
+    vertical-align: middle;
+    display: inline-block;
+    text-align: left;
+    width: auto;
+}
+.Playoffs-circles-rd1 {
+    margin: 0px;
+    vertical-align: top;
+    display: inline-block;
+    height: 70vh;
+    width: 72px;
+}
+.Playoffs-connections {
+    /* outline: 1px solid pink; */
+    display: inline-block;
+    margin: 0px;
+    height: 70vh;
+    width: 75px;
+}
+.Playoffs-connectors {
+    display: inline-block;
+    /* outline: 1px solid teal; */
+    width: 75px;
+    height: 159px;
+}
+.Playoffs .two-to-one-left {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 35%;
+    display: inline-block;
+    height: 50%;
+    width: 40px;
+    border-top: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.Playoffs .vertical-line {
+    display: inline-block;
+    margin-top: 50%;
+    width: 33px;
+    height: 40px;
+    border-top: 2px solid gray;
+}
+
+/* ROUND 2 LEFT ------------- */
+.Playoffs .two-to-one-left-rd2 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    height: 157px;
+    width: 40px;
+    margin-top: 70px;
+    border-top: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.Playoffs .vertical-line-rd2 {
+    /* outline: 1px solid teal; */
+    vertical-align: middle;
+    display: inline-block;
+    width: 33px;
+    height: 100%;
+    border-top: 2px solid gray;
+}
+.Playoffs-connections-rd2 {
+    /* outline: 1px solid pink; */
+    display: inline-block;
+    height: 70vh;
+    width: 75px;
+}
+.Playoffs-connectors-rd2 {
+    display: inline-block;
+    margin-bottom: 70px;
+    width: 75px;
+    height: 250px;
+    /* outline: 1px solid yellow; */
+}
+.Playoffs-connectors-rd2 div {
+    margin-top: 100px;
+}
+.Playoffs-rd-2 {
+    vertical-align: top;
+    display: inline-block;
+    /* border: 1px solid green; */
+    width: auto;
+    height: 100%;
+}
+.Playoffs-circles-rd2 > .Playoffs-circle {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.Playoffs-circles-rd2 {
+    margin: 0px;
+    vertical-align: top;
+    display: inline-block;
+    height: 70vh;
+    width: 72px;
+}
+/* ROUND 3 LEFT ------------- */
+.Playoffs-rd-3 {
+    vertical-align: middle;
+    display: inline-block;
+    /* border: 1px solid yellow; */
+    width: 100px;
+}
+.Playoffs .two-to-one-left-rd3 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    height: 318px;
+    width: 40px;
+    margin-top: 155px;
+    border-top: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.Playoffs .vertical-line-rd3 {
+    /* outline: 1px solid teal; */
+    margin-top: 318px;
+    vertical-align: top;
+    display: inline-block;
+    width: 33px;
+    height: 100%;
+    border-top: 2px solid gray;
+}
+.Playoffs-connections-rd3 {
+    /* outline: 1px solid pink; */
+    display: inline-block;
+    height: 70vh;
+    width: 75px;
+}
+.Playoffs-connectors-rd3 {
+    display: inline-block;
+    margin-bottom: 70px;
+    width: 75px;
+    height: 250px;
+    /* outline: 1px solid yellow; */
+}
+.Playoffs-connectors-rd3 div {
+    margin-top: 100px;
+}
+.Playoffs-rd-3 {
+    vertical-align: top;
+    display: inline-block;
+    /* border: 1px solid green; */
+    width: auto;
+    height: 100%;
+}
+.Playoffs-circles-rd3 > .Playoffs-circle {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+.Playoffs-circles-rd3 {
+    vertical-align: top;
+    display: inline-block;
+    height: 70vh;
+    width: 72px;
+}
+/* ROUND 4 LEFT ------------- */
+.Playoffs-circles-rd4 {
+    /* outline: 1px solid purple; */
+    vertical-align: top;
+    display: inline-block;
+    height: 70vh;
+    width: 72px;
+}
+.Playoffs .two-to-one-left-rd4 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    height: 318px;
+    width: 40px;
+    margin-top: 155px;
+    border-top: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.Playoffs .vertical-line-rd4 {
+    /* outline: 1px solid teal; */
+    margin-top: 318px;
+    vertical-align: top;
+    display: inline-block;
+    width: 33px;
+    height: 100%;
+    border-top: 2px solid gray;
+}
+.Playoffs-connections-rd4 {
+    /* outline: 1px solid pink; */
+    display: inline-block;
+    height: 70vh;
+    width: 75px;
+}
+.Playoffs-connectors-rd4 {
+    display: inline-block;
+    margin-bottom: 70px;
+    width: 33px;
+    height: 250px;
+    /* outline: 1px solid yellow; */
+}
+.Playoffs-connectors-rd4 div {
+    margin-top: 100px;
+}
+.Playoffs-rd-4 {
+    vertical-align: top;
+    display: inline-block;
+    /* border: 1px solid green; */
+    width: auto;
+    height: 100%;
+}
+.Playoffs-circles-rd4 > .Playoffs-circle {
+    margin-top: 283px;
+    margin-bottom: 120px;
+}
+/* ROUND 4 RIGHT ------------- */
+.Playoffs-circles-rd4 {
+    /* outline: 1px solid purple; */
+    vertical-align: top;
+    display: inline-block;
+    height: 70vh;
+    width: 72px;
+}
+.Playoffs .two-to-one-right-rd4 {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: inline-block;
+    height: 100%;
+    width: 40px;
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.Playoffs .vertical-line-rd4 {
+    /* outline: 1px solid teal; */
+    margin-top: 318px;
+    vertical-align: top;
+    display: inline-block;
+    width: 33px;
+    height: 100%;
+    border-top: 2px solid gray;
+}
+.Playoffs-connections-rd4 {
+    /* outline: 1px solid pink; */
+    display: inline-block;
+    height: 70vh;
+    width: 33px;
+}
+.Playoffs-connectors-rd4 {
+    display: inline-block;
+    margin-bottom: 70px;
+    width: 33px;
+    height: 250px;
+    /* outline: 1px solid yellow; */
+}
+.Playoffs-connectors-rd4 div {
+    margin-top: 100px;
+}
+.Playoffs-rd-4 {
+    vertical-align: top;
+    display: inline-block;
+    /* border: 1px solid green; */
+    width: auto;
+    height: 100%;
+}
+.Playoffs-circles-rd4 > .Playoffs-circle {
+    margin-top: 283px;
+    margin-bottom: 120px;
+}
+/* ROUND 3 RIGHT ------------- */
+.Playoffs-circles-rd3-right {
+    /* outline: 1px solid purple; */
+    vertical-align: top;
+    display: inline-block;
+    height: 70vh;
+    width: 72px;
+}
+.Playoffs .two-to-one-right-rd3 {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: inline-block;
+    height: 318px;
+    width: 40px;
+    margin-top: 155px;
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.Playoffs .vertical-line-rd3 {
+    /* outline: 1px solid teal; */
+    margin-top: 318px;
+    vertical-align: top;
+    display: inline-block;
+    width: 33px;
+    height: 100%;
+    border-top: 2px solid gray;
+}
+.Playoffs-connections-rd3-right {
+    /* outline: 1px solid pink; */
+    display: inline-block;
+    height: 70vh;
+    width: 33px;
+}
+.Playoffs-connectors-rd3-right {
+    display: inline-block;
+    margin-bottom: 70px;
+    width: 33px;
+    height: 250px;
+    /* outline: 1px solid yellow; */
+}
+.Playoffs-connectors-rd3-right div {
+    margin-top: 100px;
+}
+.Playoffs-rd-3-right {
+    vertical-align: top;
+    display: inline-block;
+    /* border: 1px solid green; */
+    width: auto;
+    height: 100%;
+}
+.Playoffs-circles-rd3-right > .Playoffs-circle {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+/* ROUND 2 RIGHT ------------- */
+.Playoffs .two-to-one-right-rd2 {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: inline-block;
+    height: 157px;
+    width: 40px;
+    margin-top: 68px;
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.Playoffs .vertical-line-rd2 {
+    /* outline: 1px solid teal; */
+    vertical-align: middle;
+    display: inline-block;
+    width: 33px;
+    height: 100%;
+    border-top: 2px solid gray;
+}
+.Playoffs-connections-rd2 {
+    /* outline: 1px solid pink; */
+    display: inline-block;
+    height: 70vh;
+    width: 75px;
+}
+.Playoffs-connectors-rd2 {
+    display: inline-block;
+    margin-bottom: 70px;
+    width: 75px;
+    height: 250px;
+    /* outline: 1px solid yellow; */
+}
+.Playoffs-connectors-rd2 div {
+    margin-top: 100px;
+}
+.Playoffs-rd-2 {
+    vertical-align: top;
+    display: inline-block;
+    /* border: 1px solid green; */
+    width: auto;
+    height: 100%;
+}
+.Playoffs-circles-rd2 > .Playoffs-circle {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.Playoffs-circles-rd2 {
+    margin: 0px;
+    vertical-align: top;
+    display: inline-block;
+    height: 70vh;
+    width: 72px;
+}
+/* ROUND 1 RIGHT ------------- */
+.Playoffs-rd-1 {
+    vertical-align: middle;
+    display: inline-block;
+    text-align: left;
+    width: auto;
+}
+.Playoffs-circles-rd1 {
+    margin: 0px;
+    vertical-align: top;
+    display: inline-block;
+    height: 70vh;
+    width: 72px;
+}
+.Playoffs-connections {
+    /* outline: 1px solid pink; */
+    display: inline-block;
+    margin: 0px;
+    height: 70vh;
+    width: 75px;
+}
+.Playoffs-connectors {
+    display: inline-block;
+    /* outline: 1px solid teal; */
+    width: 75px;
+    height: 159px;
+}
+.Playoffs .two-to-one-right {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 35%;
+    display: inline-block;
+    height: 50%;
+    width: 40px;
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.Playoffs .vertical-line {
+    display: inline-block;
+    margin-top: 50%;
+    width: 33px;
+    height: 40px;
+    border-top: 2px solid gray;
+}

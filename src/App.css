@@ -17,3 +17,11 @@
   padding: 25px;
   z-index: 1;
 }
+@media (max-width: 479px) {
+  .main-content {
+    width: 90%;
+    padding-left: 2px;
+    padding-right: 2px;
+    overflow: hidden;
+  }
+}

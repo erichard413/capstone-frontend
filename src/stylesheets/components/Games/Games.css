@@ -1,0 +1,152 @@
+
+.Games h2 {
+    font-size: 5rem;
+    margin: 5px;
+}
+.Games ul {
+    list-style: none;
+    margin: 0px;
+}
+.GamesCard-logo {
+    width: 200px;
+    height: 200px;
+}
+.Games-stats-div {
+    vertical-align: top;
+    display: inline-block;
+    width: 28%;
+}
+.Games-roster-div {
+    display: inline-block;
+    width: 80%;
+}
+.Games p {
+    text-align: center;
+    margin: 1px;
+}
+.Games-roster-card-div img {
+    width: 150px;
+    height: 150px;
+    mix-blend-mode: multiply;
+    border-radius: 50%;
+    border: 3px solid grey;
+}
+
+.GamesCard:hover {
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.Games button {
+    display: inline-block;
+    margin-top: 15px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    padding: 5px 25px;
+    background-color: silver;
+    color: black;
+    font-weight: 600;
+    border-radius: 15px;
+}
+.Games button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.Games {
+    text-align: center;
+}
+.Games-games-container {
+    text-align: center;
+    display: inline-block;
+    /* outline: 1px solid blue; */
+    /* width: 60%; */
+}
+.GamesCard {
+    display: inline-block;
+    /* outline: 1px solid green; */
+    width: 90%;
+}
+.GamesCard .VS {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 70px;
+    font-size: 3rem;
+    /* outline: 1px solid red; */
+    font-weight: 600;
+}
+.GamesCard-images {
+    margin: 0px;
+}
+.GamesCard .status {
+    font-size: .8rem;
+    font-style: italic;
+}
+.GamesCard .results div {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: -35px;
+    margin: 0px;
+    /* outline: 1px solid purple; */
+}
+
+.GamesCard div p {
+    display: inline-block;
+    margin: 0px;
+    font-size: 4rem;
+}
+.home {
+    width: 10%;
+}
+.away {
+    width: 10%;
+}
+.empty {
+    display: inline-block;
+    width: 11%;
+    /* outline: 2px solid pink; */
+}
+.GamesCard ul {
+    margin: 0px;
+    padding: 0px;
+}
+.GamesCard-description {
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    /* outline: 1px solid teal; */
+}
+.season-select Select {
+    display: inline-block;
+    margin: 0px;
+    width: 100px;
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    border: 2px solid black; 
+}
+@media (max-width: 479px) {
+    .Games {
+        width: 100%;
+    }
+    .Games .GamesCard .GamesCard-logo {
+        width: 100px;
+        height: 100px;
+    }
+    .Games .GamesCard {
+        margin: 5px;
+        background-color: var(--silver);
+        border-radius: 15px;
+    }
+    .Games .GamesCard p {
+        padding-top: 20px;
+    }
+    .Games .GamesCard .empty {
+        width: 110px;
+    }
+    .Games .GamesCard .results p {
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+    .Games h3 {
+        margin: 0px;
+    }
+}

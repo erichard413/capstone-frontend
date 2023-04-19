@@ -121,7 +121,7 @@
     height: 100px;
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 100%;
     z-index:3;
 }
 
@@ -130,10 +130,6 @@
     padding: 20px;
     font-size: 25px;
     text-align: right;
-}
-   
-.ml-auto a.active:hover {
-    color: #f0f2f5;
 }
 
 .navbar-brand {
@@ -145,17 +141,14 @@
     color: white;
     font-weight: bold;
 }
-.ml-auto a:hover {
-    text-decoration: none;
-    color: #f0f2f5;
-}
-  
-nav a.active.navbar-nav {
-    border-bottom: none;
-}
   
 .ml-auto a:hover {
+    letter-spacing: 0px;
     font-weight: bold;
+}
+
+li::before {
+    width: 250px;
 }
 
 .navbar-brand {
@@ -172,7 +165,14 @@ nav a.active.navbar-nav {
     width: 100%;
 }
 
+.NavBar li a {
+    display: inline-block;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
 .NavBar a {
+    letter-spacing: 1px;
     text-decoration: none;
 }
 .ml-auto a.active {
@@ -187,19 +187,28 @@ nav a.active.navbar-nav {
 #tinyHeader {
     padding-left: 3px;
     font-size: 75px;
-
 }
 .ml-auto {
     position: absolute;
     top: 25px;
     right: 20px;
 }
-
-@media (max-width: 479px) {
-
+.collapse-toggler {
+    display: none;
 }
+.Mobile-nav {
+    display: none;
+}
+.Main-nav {
+    display: inline-block;
+}
+
 /* DEFAULT STYLING ------------- */
 .NavBar.default {
+    background-color: var(--silver);
+    border-bottom: 10px solid var(--black);
+}
+.Mobile-nav-links.default {
     background-color: var(--silver);
     border-bottom: 10px solid var(--black);
 }
@@ -219,6 +228,10 @@ nav a.active.navbar-nav {
     background-color: var(--DEVILS-RED);
     border-bottom: 10px solid var(--DEVILS-BLACK);
 }
+.Mobile-nav-links.team-1 {
+    background-color: var(--DEVILS-RED);
+    border-bottom: 10px solid var(--DEVILS-BLACK);
+}
 .NavBar.team-1 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--DEVILS-BLACK);
@@ -232,6 +245,10 @@ nav a.active.navbar-nav {
 }
 /* ISLANDERS(2) STYLING ------------- */
 .NavBar.team-2 {
+    background-color: var(--ISLANDERS-BLUE);
+    border-bottom: 10px solid var(--ISLANDERS-ORANGE);
+}
+.Mobile-nav-links.team-2 {
     background-color: var(--ISLANDERS-BLUE);
     border-bottom: 10px solid var(--ISLANDERS-ORANGE);
 }
@@ -251,6 +268,10 @@ nav a.active.navbar-nav {
     background-color: var(--RANGERS-BLUE);
     border-bottom: 10px solid var(--RANGERS-RED);
 }
+.Mobile-nav-links.team-3 {
+    background-color: var(--RANGERS-BLUE);
+    border-bottom: 10px solid var(--RANGERS-RED);
+}
 .NavBar.team-3 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--RANGERS-RED);
@@ -264,6 +285,10 @@ nav a.active.navbar-nav {
 }
 /* FLYERS(4) STYLING ------------- */
 .NavBar.team-4 {
+    background-color: var(--FLYERS-ORANGE);
+    border-bottom: 10px solid var(--FLYERS-BLACK);
+}
+.Mobile-nav-links.team-4 {
     background-color: var(--FLYERS-ORANGE);
     border-bottom: 10px solid var(--FLYERS-BLACK);
 }
@@ -283,6 +308,10 @@ nav a.active.navbar-nav {
     background-color: var(--PENGUINS-BLACK);
     border-bottom: 10px solid var(--PENGUINS-YELLOW);
 }
+.Mobile-nav-links.team-5 {
+    background-color: var(--PENGUINS-BLACK);
+    border-bottom: 10px solid var(--PENGUINS-YELLOW);
+}
 .NavBar.team-5 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--PENGUINS-YELLOW);
@@ -296,6 +325,10 @@ nav a.active.navbar-nav {
 }
 /* BRUINS(6) STYLING ------------- */
 .NavBar.team-6 {
+    background-color: var(--BRUINS-GOLD);
+    border-bottom: 10px solid var(--BRUINS-BLACK);
+}
+.Mobile-nav-links.team-6 {
     background-color: var(--BRUINS-GOLD);
     border-bottom: 10px solid var(--BRUINS-BLACK);
 }
@@ -315,6 +348,10 @@ nav a.active.navbar-nav {
     background-color: var(--SABRES-BLUE);
     border-bottom: 10px solid var(--SABRES-GOLD);
 }
+.Mobile-nav-links.team-7 {
+    background-color: var(--SABRES-BLUE);
+    border-bottom: 10px solid var(--SABRES-GOLD);
+}
 .NavBar.team-7 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--SABRES-GOLD);
@@ -328,6 +365,10 @@ nav a.active.navbar-nav {
 }
 /* CANADIENS(8) STYLING ------------- */
 .NavBar.team-8 {
+    background-color: var(--CANADIENS-RED);
+    border-bottom: 10px solid var(--CANADIENS-BLUE);
+}
+.Mobile-nav-links.team-8 {
     background-color: var(--CANADIENS-RED);
     border-bottom: 10px solid var(--CANADIENS-BLUE);
 }
@@ -347,6 +388,10 @@ nav a.active.navbar-nav {
     background-color: var(--SENATORS-RED);
     border-bottom: 10px solid var(--SENATORS-GOLD);
 }
+.Mobile-nav-links.team-9 {
+    background-color: var(--SENATORS-RED);
+    border-bottom: 10px solid var(--SENATORS-GOLD);
+}
 .NavBar.team-9 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--black);
@@ -360,6 +405,10 @@ nav a.active.navbar-nav {
 }
 /* LEAFS(10) STYLING ------------- */
 .NavBar.team-10 {
+    background-color: var(--white);
+    border-bottom: 10px solid var(--LEAFS-BLUE);
+}
+.Mobile-nav-links.team-10 {
     background-color: var(--white);
     border-bottom: 10px solid var(--LEAFS-BLUE);
 }
@@ -379,6 +428,10 @@ nav a.active.navbar-nav {
     background-color: var(--HURRICANES-RED);
     border-bottom: 10px solid var(--HURRICANES-GREY);
 }
+.Mobile-nav-links.team-12 {
+    background-color: var(--HURRICANES-RED);
+    border-bottom: 10px solid var(--HURRICANES-GREY);
+}
 .NavBar.team-12 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--HURRICANES-GREY);
@@ -392,6 +445,10 @@ nav a.active.navbar-nav {
 }
 /* PANTHERS(13) STYLING ------------- */
 .NavBar.team-13 {
+    background-color: var(--PANTHERS-RED);
+    border-bottom: 10px solid var(--PANTHERS-BLUE);
+}
+.Mobile-nav-links.team-13 {
     background-color: var(--PANTHERS-RED);
     border-bottom: 10px solid var(--PANTHERS-BLUE);
 }
@@ -411,6 +468,10 @@ nav a.active.navbar-nav {
     background-color: var(--LIGHTNING-BLUE);
     border-bottom: 10px solid var(--white);
 }
+.Mobile-nav-links.team-14 {
+    background-color: var(--LIGHTNING-BLUE);
+    border-bottom: 10px solid var(--white);
+}
 .NavBar.team-14 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--LIGHTNING-BLUE);
@@ -424,6 +485,10 @@ nav a.active.navbar-nav {
 }
 /* CAPITALS(15) STYLING ------------- */
 .NavBar.team-15 {
+    background-color: var(--CAPITALS-RED);
+    border-bottom: 10px solid var(--CAPITALS-BLUE);
+}
+.Mobile-nav-links.team-15 {
     background-color: var(--CAPITALS-RED);
     border-bottom: 10px solid var(--CAPITALS-BLUE);
 }
@@ -443,6 +508,10 @@ nav a.active.navbar-nav {
     background-color: var(--white);
     border-bottom: 10px solid var(--BLACKHAWKS-RED);
 }
+.Mobile-nav-links.team-16 {
+    background-color: var(--white);
+    border-bottom: 10px solid var(--BLACKHAWKS-RED);
+}
 .NavBar.team-16 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--BLACKHAWKS-RED);
@@ -456,6 +525,10 @@ nav a.active.navbar-nav {
 }
 /* REDWINGS(17) STYLING ------------- */
 .NavBar.team-17 {
+    background-color: var(--REDWINGS-RED);
+    border-bottom: 10px solid var(--white);
+}
+.Mobile-nav-links.team-17 {
     background-color: var(--REDWINGS-RED);
     border-bottom: 10px solid var(--white);
 }
@@ -475,6 +548,10 @@ nav a.active.navbar-nav {
     background-color: var(--PREDATORS-GOLD);
     border-bottom: 10px solid var(--PREDATORS-BLUE);
 }
+.Mobile-nav-links.team-18 {
+    background-color: var(--PREDATORS-GOLD);
+    border-bottom: 10px solid var(--PREDATORS-BLUE);
+}
 .NavBar.team-18 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--white);
@@ -488,6 +565,10 @@ nav a.active.navbar-nav {
 }
 /* BLUES(19) STYLING ------------- */
 .NavBar.team-19 {
+    background-color: var(--BLUES-BLUE);
+    border-bottom: 10px solid var(--BLUES-YELLOW);
+}
+.Mobile-nav-links.team-19 {
     background-color: var(--BLUES-BLUE);
     border-bottom: 10px solid var(--BLUES-YELLOW);
 }
@@ -507,6 +588,10 @@ nav a.active.navbar-nav {
     background-color: var(--FLAMES-RED);
     border-bottom: 10px solid var(--FLAMES-YELLOW);
 }
+.Mobile-nav-links.team-20 {
+    background-color: var(--FLAMES-RED);
+    border-bottom: 10px solid var(--FLAMES-YELLOW);
+}
 .NavBar.team-20 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--FLAMES-YELLOW);
@@ -520,6 +605,10 @@ nav a.active.navbar-nav {
 }
 /* AVALANCHE(21) STYLING ------------- */
 .NavBar.team-21 {
+    background-color: var(--AVALANCHE-BURGUNDY);
+    border-bottom: 10px solid var(--AVALANCHE-BLUE);
+}
+.Mobile-nav-links.team-21 {
     background-color: var(--AVALANCHE-BURGUNDY);
     border-bottom: 10px solid var(--AVALANCHE-BLUE);
 }
@@ -539,6 +628,10 @@ nav a.active.navbar-nav {
     background-color: var(--OILERS-ORANGE);
     border-bottom: 10px solid var(--OILERS-BLUE);
 }
+.Mobile-nav-links.team-22 {
+    background-color: var(--OILERS-ORANGE);
+    border-bottom: 10px solid var(--OILERS-BLUE);
+}
 .NavBar.team-22 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--OILERS-BLUE);
@@ -552,6 +645,10 @@ nav a.active.navbar-nav {
 }
 /* CANUCKS(23) STYLING ------------- */
 .NavBar.team-23 {
+    background-color: var(--CANUCKS-BLUE);
+    border-bottom: 10px solid var(--CANUCKS-GREEN);
+}
+.Mobile-nav-links.team-23 {
     background-color: var(--CANUCKS-BLUE);
     border-bottom: 10px solid var(--CANUCKS-GREEN);
 }
@@ -571,6 +668,10 @@ nav a.active.navbar-nav {
     background-color: var(--DUCKS-ORANGE);
     border-bottom: 10px solid var(--DUCKS-GOLD);
 }
+.Mobile-nav-links.team-24 {
+    background-color: var(--DUCKS-ORANGE);
+    border-bottom: 10px solid var(--DUCKS-GOLD);
+}
 .NavBar.team-24 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--DUCKS-GOLD);
@@ -584,6 +685,10 @@ nav a.active.navbar-nav {
 }
 /* STARS(25) STYLING ------------- */
 .NavBar.team-25 {
+    background-color: var(--STARS-GREEN);
+    border-bottom: 10px solid var(--STARS-SILVER);
+}
+.Mobile-nav-links.team-25 {
     background-color: var(--STARS-GREEN);
     border-bottom: 10px solid var(--STARS-SILVER);
 }
@@ -603,6 +708,10 @@ nav a.active.navbar-nav {
     background-color: var(--black);
     border-bottom: 10px solid var(--KINGS-SILVER);
 }
+.Mobile-nav-links.team-26 {
+    background-color: var(--black);
+    border-bottom: 10px solid var(--KINGS-SILVER);
+}
 .NavBar.team-26 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--white);
@@ -616,6 +725,10 @@ nav a.active.navbar-nav {
 }
 /* SHARKS(28) STYLING ------------- */
 .NavBar.team-28 {
+    background-color: var(--SHARKS-TEAL);
+    border-bottom: 10px solid var(--SHARKS-ORANGE);
+}
+.Mobile-nav-links.team-28 {
     background-color: var(--SHARKS-TEAL);
     border-bottom: 10px solid var(--SHARKS-ORANGE);
 }
@@ -635,6 +748,10 @@ nav a.active.navbar-nav {
     background-color: var(--BLUEJACKETS-BLUE);
     border-bottom: 10px solid var(--BLUEJACKETS-RED);
 }
+.Mobile-nav-links.team-29 {
+    background-color: var(--BLUEJACKETS-BLUE);
+    border-bottom: 10px solid var(--BLUEJACKETS-RED);
+}
 .NavBar.team-29 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--BLUEJACKETS-SILVER);
@@ -648,6 +765,10 @@ nav a.active.navbar-nav {
 }
 /* WILD(30) STYLING ------------- */
 .NavBar.team-30 {
+    background-color: var(--WILD-GREEN);
+    border-bottom: 10px solid var(--WILD-TAN);
+}
+.Mobile-nav-links.team-30 {
     background-color: var(--WILD-GREEN);
     border-bottom: 10px solid var(--WILD-TAN);
 }
@@ -667,6 +788,10 @@ nav a.active.navbar-nav {
     background-color: var(--JETS-DARKBLUE);
     border-bottom: 10px solid var(--JETS-MAROON);
 }
+.Mobile-nav-links.team-52 {
+    background-color: var(--JETS-DARKBLUE);
+    border-bottom: 10px solid var(--JETS-MAROON);
+}
 .NavBar.team-52 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--JETS-BLUE);
@@ -680,6 +805,10 @@ nav a.active.navbar-nav {
 }
 /* COYOTES(53) STYLING ------------- */
 .NavBar.team-53 {
+    background-color: var(--COYOTES-RED);
+    border-bottom: 10px solid var(--COYOTES-TAN);
+}
+.Mobile-nav-links.team-53 {
     background-color: var(--COYOTES-RED);
     border-bottom: 10px solid var(--COYOTES-TAN);
 }
@@ -699,6 +828,10 @@ nav a.active.navbar-nav {
     background-color: var(--GOLDENKNIGHTS-GRAY);
     border-bottom: 10px solid var(--GOLDENKNIGHTS-GOLD);
 }
+.Mobile-nav-links.team-54 {
+    background-color: var(--GOLDENKNIGHTS-GRAY);
+    border-bottom: 10px solid var(--GOLDENKNIGHTS-GOLD);
+}
 .NavBar.team-54 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--GOLDENKNIGHTS-GOLD);
@@ -715,6 +848,10 @@ nav a.active.navbar-nav {
     background-color: var(--KRAKEN-SEABLUE);
     border-bottom: 10px solid var(--KRAKEN-RED);
 }
+.Mobile-nav-links.team-55 {
+    background-color: var(--KRAKEN-SEABLUE);
+    border-bottom: 10px solid var(--KRAKEN-RED);
+}
 .NavBar.team-55 h1 {
     font-family: NHL, Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 3px var(--KRAKEN-BOUNDLESSBLUE);
@@ -726,4 +863,65 @@ nav a.active.navbar-nav {
     color: var(--KRAKEN-SHADOWBLUE);
     -webkit-text-stroke: 3px var(--KRAKEN-ICEBLUE);
 }
-
+@media (max-width: 479px) {
+    .navbar-brand {
+        margin-top: 5px;
+        vertical-align: middle;
+        text-align: center;
+        padding: 2px;
+        left: 2%;
+    }
+    .navbar-brand h1 {
+        font-size: 12vw;
+    }
+    .navbar-brand #tinyHeader {
+        font-size: 12vw;
+    }
+    .collapse-toggler {
+        display: inline-block;
+    }
+    .Mobile-nav {
+        display: inline-block;
+    }
+    .Main-nav {
+        display: none;
+    }
+    .showhidebtndiv {
+        display: fixed;
+        position: absolute;
+        top: 35px;
+        left: 80vw;
+        height: auto;
+        /* outline: 1px solid red; */
+    }
+    .Mobile-nav-links {
+        display: fixed;
+        position: absolute;
+        height: 360px;
+        margin-top: 50px;
+        left: 0px;
+        /* outline: 1px solid pink; */
+        width: 100vw;
+        z-index: 1;
+    }
+    .Mobile-nav li {
+        display: block;
+        font-size: 2.5rem;
+    }
+    .collapse-toggler > div {
+        display: fixed;
+        width: 50px;
+        height: 5px;
+        background-color: black;
+        margin: 5px 0;
+        border-radius: 20px;
+    }
+}
+@media (min-width: 480px) and (max-width: 1320px) {
+    .NavBar .ml-auto.navbar-nav {
+        display: block;
+    }
+    .NavBar .navbar-brand {
+        opacity: 20%;
+    }
+}

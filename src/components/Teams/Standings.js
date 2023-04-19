@@ -4,6 +4,7 @@ import StandingsTableDivision from './StandingsTableDivision';
 import StandingsTableLeague from './StandingsTableLeague';
 import StandingsTableConference from './StandingsTableConference';
 import StandingsTableWildCard from './StandingsTableWildCard';
+import Playoffs from './Playoffs';
 import NHLstatsAPI from '../../api';
 import '../../stylesheets/components/Teams/Standings.css';
 
@@ -39,11 +40,13 @@ function Standings() {
             <button onClick={handleSetTable}>Wild Card</button>
             <button onClick={handleSetTable}>Conference</button>
             <button onClick={handleSetTable}>League</button>
+            <button onClick={handleSetTable}>Playoffs</button>
         </div>
             {currTable === "Division" && <StandingsTableDivision standings={standings}/>}
             {currTable === "League" && <StandingsTableLeague standings={standings}/>}
             {currTable === "Conference" && <StandingsTableConference standings={standings}/>}
             {currTable === "Wild Card" && <StandingsTableWildCard standings={standings}/>}
+            {currTable === "Playoffs" && <Playoffs standings={standings}/>}
         </div>
     )
 }

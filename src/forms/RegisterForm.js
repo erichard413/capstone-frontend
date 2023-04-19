@@ -4,7 +4,6 @@ import {useState} from 'react';
 import NHLstatsAPI from "../api";
 import jwt_decode from 'jwt-decode';
 import {useNavigate} from 'react-router-dom';
-import validateEmail from "../helpers/emailValidator";
 import getWatchedTeams from "../helpers/getWatchedTeams";
 
 import {
@@ -79,7 +78,7 @@ function RegisterForm({setUser, teams}) {
           setUser(userData);
           navigate('/home', {replace: true});
         }
-        signMeUp().catch(err=> setFormError({...formError, ['duplicateUsername'] : `Username ${formData.username} is taken, please choose another`}))
+        signMeUp().catch(err=> setFormError({...formError, duplicateUsername : `Username ${formData.username} is taken, please choose another`}))
         }
    
     if (!teams) {
@@ -87,7 +86,7 @@ function RegisterForm({setUser, teams}) {
         <p>LOADING..</p>
       </div>)
     }
-    console.log(formData);
+
     return (
         <div>
         <Form className="form">

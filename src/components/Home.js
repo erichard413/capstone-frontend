@@ -11,10 +11,18 @@ function Home({user, setUser}) {
     if (localStorage.getItem("token") == null) {
         return(
             <div className="Home main-content">
-            <h2>PLEASE LOG IN FIRST</h2>
+            <div>
+                <h2>Login or Create Account</h2>
+                <p>Creating an account will let you add favorite players & teams for quick access.</p>
+            </div>
             <div className="Home-button-div">
                     <Button onClick={() => navigate("/login", {replace: true})}>Login</Button>
                     <Button onClick={() => navigate("/register", {replace: true})}>Sign Up</Button>
+                    <div className="Home-video-div">
+                        <video autoplay="autoplay" loop="true" muted>
+                            <source src="https://www.shutterstock.com/shutterstock/videos/1098337409/preview/stock-footage-ice-hockey-cinematic-slow-motion-footage-of-goals-net-hit-by-puck-player-hitting-puck-with-stick.webm" type="video/webm" />
+                        </video>
+                    </div>
             </div>
             </div>
 

@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import NHLstatsAPI from '../../api';
 import '../../stylesheets/components/Players/PlayerCard.css';
 import headshot from '../../Assets/images/default_profile_picture.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 
 function PlayerCard({player, user, setUser}) {
     function handleAdd(){
@@ -39,12 +41,12 @@ function PlayerCard({player, user, setUser}) {
                 <p>LOADING...</p>
             </div>)
     }
-
+    const element = <FontAwesomeIcon icon={faCircleXmark} />
     return (
         <div className="PlayerCard"> 
             <Link key={`${player.playerId}-link`} to={`/players/${player.playerId || player.id}`}><img src={imgURL} alt={`${player.playerId || player.id}`} onError={replaceImage} /></Link>
             <p><Link key={`${player.playerId}-link`} to={`/players/${player.playerId || player.id}`}>{player.name || player.fullName}</Link></p>
-            {user && <>{user.favPlayers[player.playerId || player.id] ? <button onClick={handleRemove}>REMOVE</button> : <button onClick={handleAdd}>ADD</button>}</>}   
+            {user && <>{user.favPlayers[player.playerId || player.id] ? <><button className="Full-view" onClick={handleRemove}>REMOVE</button> <div className="Mobile-view" onClick={handleRemove}>{element}</div>  </> : <button className="Full-view" onClick={handleAdd}>ADD</button>}</>}
         </div>
     )
 }

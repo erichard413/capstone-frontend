@@ -20,3 +20,110 @@
     font-size: 2rem;
     margin-bottom: 10px;
 }
+.FourOhFour video {
+    width: 60%;
+}
+.FourOhFour a {
+    text-decoration: none;
+    color: gray;
+    font-weight: 600;
+}
+.FourOhFour video {
+    padding-top: 20px;
+}
+.Home .Mobile-view {
+    display: none;
+}
+@media (max-width: 479px) {
+    .Home {
+        width: 100%;
+        text-align: center;
+    }
+    .Home > div {
+        display: inline-block;
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+        width: 80%;
+        /* outline: 1px solid teal; */
+    }
+    .Home video {
+        width: 100%;
+        padding: 0px;
+    }
+    .Home-video-div {
+        text-align: center;
+        width: 100%;
+    }
+    .Home .home-title {
+        font-size: 1.1rem;
+    }
+    .Home h2 {
+        font-size: 2.5rem;
+    }
+    .Home .WatchedTeamsCard img {
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+    }
+    .Home .WatchedTeamsCard p {
+        padding-top: 25px;
+        vertical-align: top;
+        height: 1.5rem;
+        margin: 0px;
+        display: inline-block;
+        font-size: 1.5rem;
+        /* outline: 1px solid grey; */
+    }
+    .Home .WatchedTeamsCard {
+        display: inline-block;
+        /* outline: 1px solid red; */
+        margin: 5px;
+        text-align: left;
+        height: 80px;
+        width: 100%;
+        background-color: var(--silver);
+        border-radius: 15px;
+    }
+    .watchedTeams .PlayerCard {
+        display: inline-block;
+        /* outline: 1px solid red; */
+        margin: 5px;
+        text-align: left;
+        height: 80px;
+        width: 100%;
+        background-color: var(--silver);
+        border-radius: 15px;
+    }
+    .watchedTeams .PlayerCard p {
+        padding-top: 25px;
+        vertical-align: top;
+        height: 1.5rem;
+        margin: 0px;
+        display: inline-block;
+        font-size: 1.5rem;
+        /* outline: 1px solid grey; */
+    }
+    .watchedTeams .PlayerCard img {
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+        display: inline-block;
+    }
+    .PlayerCard .Mobile-view {
+        text-align: center;
+        width: 50px;
+        position: absolute;
+        margin-top: 20px;
+        right: 50px;
+        display: inline-block;
+        /* outline: 1px solid teal; */
+    }
+    .PlayerCard .Mobile-view svg {
+        height: 40px;
+        width: 40px;
+    }
+    .PlayerCard .Full-view {
+        display: none;
+    }
+}

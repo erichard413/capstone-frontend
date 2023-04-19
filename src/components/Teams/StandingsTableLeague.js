@@ -17,7 +17,7 @@ function StandingsTableLeague({standings}) {
 
     return (
         <div className="StandingsTable"> 
-        <h1>League Standings</h1>
+        <h2>League Standings</h2>
          <table>
             <thead>
                 <tr>

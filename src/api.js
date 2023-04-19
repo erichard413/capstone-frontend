@@ -109,8 +109,8 @@ class NHLstatsAPI {
     //     const res = await this.request(`teams/${teamId}/roster`, {}, 'get');
     //     return res;
     // }
-    static async getRoster(teamId) {
-        const res = await axios.get(`${NHLAPI_BASE_URL}/teams/${teamId}/roster`);
+    static async getRoster(teamId, season) {
+        const res = await axios.get(`${NHLAPI_BASE_URL}/teams/${teamId}/roster?expand=team.roster&season=${season}`);
 
         // this will get roster, but we need player data.
         const output = await getRosterData(res.data.roster);
@@ -132,6 +132,22 @@ class NHLstatsAPI {
     static async removeFavoriteTeam(username) {
         const res = await this.request(`users/${username}`, {favTeamId : null}, 'patch');
         return res;
+    }
+    static async getPlayoffData(season) {
+        const res = await axios.get(`${NHLAPI_BASE_URL}/tournaments/playoffs?expand=round.series,schedule.game.seriesSummary&season=${season}`);
+        return res.data
+    }
+    static async getSeasonYears() {
+        const res = await axios.get(`${NHLAPI_BASE_URL}/seasons`);
+        return res.data
+    }
+    static async getCurrentSeason() {
+        const res = await axios.get(`${NHLAPI_BASE_URL}/seasons.current`);
+        return res.data.seasons[0].seasonId;
+    }
+    static async getGamesForSeason(teamId, season) {
+        const res = await axios.get(`${NHLAPI_BASE_URL}/schedule?teamId=${teamId}&season=${season}`);
+        return res.data.dates;
     }
 }
 
