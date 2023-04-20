@@ -9,9 +9,10 @@ function StandingsTableWildCard({standings}) {
 
     return (
         <div className="StandingsTable">
-            <p className="standings-title">Eastern Conference</p> 
+            <p className="standings-title">Eastern Conference</p>
+            <p className="standings-subtitle">Metro Division</p>
+            <div>
             <table>
-                <caption className="standings-subtitle">Metro Division</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -57,8 +58,10 @@ function StandingsTableWildCard({standings}) {
                 ))}    
                 </tbody>
             </table>
+            </div>
+            <p className="standings-subtitle">Atlantic Division</p>
+            <div>
             <table>
-                <caption className="standings-subtitle">Atlantic Division</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -104,8 +107,10 @@ function StandingsTableWildCard({standings}) {
                 ))}    
                 </tbody>
             </table>
+            </div>
+            <p className="standings-subtitle">East Wildcard</p>
+            <div>
             <table>
-                <caption className="standings-subtitle">East Wildcard</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -172,9 +177,11 @@ function StandingsTableWildCard({standings}) {
                 ))}    
                 </tbody>
             </table>
+            </div>
             <p className="standings-title">Western Conference</p>
+            <p className="standings-subtitle">Central Division</p>
+            <div>
             <table>
-                <caption className="standings-subtitle">Central Division</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -220,8 +227,10 @@ function StandingsTableWildCard({standings}) {
                 ))}    
                 </tbody>
             </table>
+            </div>
+            <p className="standings-subtitle">Pacific Division</p>
+            <div>
             <table>
-                <caption className="standings-subtitle">Pacific Division</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -267,8 +276,10 @@ function StandingsTableWildCard({standings}) {
                 ))}    
                 </tbody>
             </table>
+            </div>
+            <p className="standings-subtitle">West Wildcard</p>
+            <div>
             <table>
-                <caption className="standings-subtitle">West Wildcard</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -335,6 +346,7 @@ function StandingsTableWildCard({standings}) {
                 ))}    
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }

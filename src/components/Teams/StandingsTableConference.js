@@ -11,8 +11,10 @@ function StandingsTableConference({standings}) {
         <div className="StandingsTable">
             <h2>Conference Standings</h2> 
            {Object.keys(conferenceStandings).map(d => (
+            <div key={d}>
+            <p className="standings-subtitle">{d} Conference</p>
+            <div>
             <table key={d}>
-                <caption>{d} Conference</caption>
                 <thead>
                 <tr>
                     <th>Team Name</th>
@@ -58,6 +60,8 @@ function StandingsTableConference({standings}) {
                 ))}    
                 </tbody>
             </table>
+            </div>
+            </div>
            ))}
         </div>
     )

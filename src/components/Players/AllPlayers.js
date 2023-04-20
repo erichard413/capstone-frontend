@@ -16,7 +16,7 @@ import {
 function AllPlayers({user, setUser}) {
     const [allPlayers, setAllPlayers] = useState();
     const [pageIdx, setPageIdx] = useState(1);
-    const [paginationLimit, setPaginationLimit] = useState(15);
+    const [paginationLimit] = useState(15);
     
     const initialState = {
         name: ""

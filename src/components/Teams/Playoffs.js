@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react';
 import '../../stylesheets/components/Teams/Playoffs.css';
 import NHLstatsAPI from '../../api';
 import PlayoffsCircle from './Playoffs-circle';
+import PlayoffsCard from './PlayoffsCard';
+import FinalCard from './FinalCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import {
     Button,
     Form,
@@ -12,10 +16,17 @@ import {
 import formatPlayoffData from '../../helpers/formatPlayoffData';
 
 function Playoffs() {
+    const initialToggle = {
+        rd1: true,
+        rd2: true,
+        rd3: true,
+        rd4: true
+    }
     const [seasons, setSeasons] = useState();
     const [formData, setFormData] = useState();
     const [currSeason, setCurrSeason] = useState("20222023")
     const [playoffData, setPlayoffData] = useState()
+    const [roundToggles, setRoundToggles] = useState(initialToggle)
 
     useEffect(()=>{
         async function getSeasons() {
@@ -27,7 +38,6 @@ function Playoffs() {
     },[])
 
     useEffect(()=>{
-        console.log('getting data...')
         async function getData() {
             try {
                 const res = await NHLstatsAPI.getPlayoffData(currSeason);
@@ -47,7 +57,15 @@ function Playoffs() {
         <div>LOADING..</div>
         )
     }
-
+    //toggle rd open/close on mobile
+    const handleRdToggle = (rd) => {
+        let toggleCopy = {...roundToggles};
+        toggleCopy[rd] = !toggleCopy[rd];
+        setRoundToggles(toggleCopy);
+    }
+    const downChevron = <FontAwesomeIcon className="rd1" icon={faChevronDown}/>
+    const upChevron = <FontAwesomeIcon className="rd1" icon={faChevronUp}/>
+    //
     const handleChange = (e) => {
         let {name, value} = e.target;
         setFormData(data => ({
@@ -68,8 +86,6 @@ function Playoffs() {
     if (playoffData.east.round4.length>0) {
         winner = playoffData.east.round4[0].team1.wins === 4 ? playoffData.east.round4[0].team1 : playoffData.west.round4[0].team1;
     }
-
-    console.log(playoffData);
 
     return(
         <div className="Playoffs">
@@ -330,6 +346,50 @@ function Playoffs() {
                     </div>
                     
                 </div>
+            </div>
+            <div className="Playoffs-table-mobile">
+                <div className="rd1" onClick={()=> handleRdToggle('rd1')}>
+                    <p className="round-title">Quarter Finals {roundToggles.rd1 ? upChevron : downChevron} </p> 
+                </div>
+                {roundToggles.rd1 && <div>
+                    <p className="conference">Eastern Conference</p>
+                    {playoffData.east.round1.map(d=> (<PlayoffsCard matchup={d} key={d.code} />))}
+                    <p className="conference">Western Conference</p>
+                    {playoffData.west.round1.map(d=> (<PlayoffsCard matchup={d} key={d.code} />))}
+                </div>}
+            {playoffData.east.round2.length > 0 && <>
+                <div className="rd2" onClick={()=> handleRdToggle('rd2')}>
+                    <p className="round-title">Semi Finals {roundToggles.rd2 ? upChevron : downChevron} </p>
+                </div>
+                {roundToggles.rd2 && <div>
+                    <p className="conference">Eastern Conference</p>
+                    {playoffData.east.round2.map(d=> (<PlayoffsCard matchup={d} key={d.code} />))}
+                    <p className="conference">Western Conference</p>
+                    {playoffData.west.round2.map(d=> (<PlayoffsCard matchup={d} key={d.code} />))}
+                </div>}
+            </> 
+            }
+            {playoffData.east.round3.length > 0 && <>
+                <div className="rd3" onClick={()=> handleRdToggle('rd3')}>
+                    <p className="round-title">Conference Finals {roundToggles.rd3 ? upChevron : downChevron} </p>
+                </div>
+                {roundToggles.rd3 && <div>
+                    <p className="conference">Eastern Conference</p>
+                    {playoffData.east.round3.map(d=> (<PlayoffsCard matchup={d} key={d.code} />))}
+                    <p className="conference">Western Conference</p>
+                    {playoffData.west.round3.map(d=> (<PlayoffsCard matchup={d} key={d.code} />))}
+                </div>}
+            </> 
+            }
+            {playoffData.east.round4.length > 0 && <>
+                <div className="rd4" onClick={()=> handleRdToggle('rd4')}>
+                    <p className="round-title">Stanley Cup Final {roundToggles.rd4 ? upChevron : downChevron} </p>
+                </div>
+                {roundToggles.rd4 && <div>
+                    <FinalCard team1={playoffData.east.round4[0]} team2={playoffData.west.round4[0]} />
+                </div>}
+            </> 
+            }
             </div>
         </div>
     )

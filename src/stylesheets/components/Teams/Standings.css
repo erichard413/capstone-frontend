@@ -50,3 +50,47 @@
     font-size: 2rem;
     margin-bottom: 10px;
 }
+@media (max-width: 479px) {
+    .Standings {
+        width: 99%;
+        overflow-y: hidden;
+    }
+    .Standings .StandingsTable > div {
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    .Standings .StandingsTable  .header-title {
+        display: inline-block;
+    }
+    .Standings table {
+        border: 0px;
+    }
+    .Standings .Standings-links {
+        width: 80%;
+        display: inline-block;
+    }
+    .Standings button {
+        display: inline-block;
+        width: 80px;
+        padding: 5px;
+        margin: 5px;
+        height: 30px;
+        font-size: .7rem;
+        text-align: center;
+    }
+}
+@media (min-width: 480px) and (max-width: 1320px) {
+    .Standings {
+        width: 99%;
+        overflow-y: hidden;
+    }
+    .Standings .StandingsTable > div {
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    .Standings .StandingsTable > div {
+        margin-right: 30px;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+}

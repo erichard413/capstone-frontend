@@ -12,7 +12,7 @@ function PlayerCard({player, user, setUser}) {
             await NHLstatsAPI.addPlayerToFavorites(user.username, player.playerId || player.id);
             // update user, add player ID to favPlayers.
             let userCopy = {...user}
-            userCopy.favPlayers[player.playerId] = player;
+            userCopy.favPlayers[player.id || player.playerId] = player;
             setUser(userCopy);
         }
         addPlayer();
@@ -34,7 +34,6 @@ function PlayerCard({player, user, setUser}) {
     function replaceImage(error) {
         error.target.src = headshot;
     }
-
     if(!player) {
         return (
             <div>

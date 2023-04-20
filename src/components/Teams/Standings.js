@@ -12,7 +12,6 @@ function Standings() {
     const [standings, setStandings] = useState();
     const [currTable, setCurrTable] = useState("Division");
     useEffect(()=> {
-        console.log('getting standings..')
         async function getStandings() {
             const result = await NHLstatsAPI.getStandings();
             setStandings(result);

@@ -98,7 +98,6 @@ function Team({user, setUser, selectedSeason, setSelectedSeason}) {
         e.preventDefault();
         navigate(`/games/${teamId}/${selectedSeason}`);
     }
-
     return (
         <div className="Team main-content">
             <h2>{team.name}</h2>
@@ -113,7 +112,7 @@ function Team({user, setUser, selectedSeason, setSelectedSeason}) {
                                 <li><span className="font-weighted">Conference: </span>{team.conference}</li>
                                 <li><span className="font-weighted">Division: </span>{team.division}</li>
                                 <li><span className="font-weighted">Website: </span><a href={team.url}>{team.url.replace(/^https?:\/\//, '').slice(0,-1)}</a></li>
-                                {user && user.watchedTeams[team.id] ? <button onClick={handleRemove}>Remove from Watchlist</button> :<button onClick={handleAdd}>Add to Watchlist</button> }
+                                {user && user.watchedTeams[team.id] ? <button onClick={handleRemove} disabled={user.favTeamId === team.id ? true : false}>Remove from Watchlist</button> :<button onClick={handleAdd}>Add to Watchlist</button> }
                                 <button onClick={gamesClick}>Games By Season</button>
                             </ul>
                     </div>

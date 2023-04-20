@@ -37,6 +37,9 @@
     margin: 0px;
     font-weight: 600;
 }
+.PlayerCard .Mobile-view {
+    display: none;
+}
 @media (max-width: 479px) {
     .Players {
         width: 100%;

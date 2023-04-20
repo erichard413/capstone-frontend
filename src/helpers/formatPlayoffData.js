@@ -1180,7 +1180,6 @@ const formatPlayoffData = (data) => {
     if (s.matchupTeams) {
         s.matchupTeams.forEach(t => {
         // if team id is in the previous round east, push team to the east, otherwise push to west.
-        console.log(t.team.id)
         if (output.east.round3[0].team1.id === t.team.id || output.east.round3[0].team2.id === t.team.id) {
             output.east.round4.push({
                 description: s.currentGame.seriesSummary.seriesStatusShort,

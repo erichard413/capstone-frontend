@@ -17,7 +17,7 @@ function ActivePlayers({user, setUser}) {
     const [currPlayers, setCurrPlayers] = useState();
     const [pageIdx, setPageIdx] = useState(1);
     const [nameSearch, setNameSearch] = useState();
-    const [paginationLimit, setPaginationLimit] = useState(15);
+    const [paginationLimit] = useState(15);
     
     const initialState = {
         name: ""
@@ -34,7 +34,6 @@ function ActivePlayers({user, setUser}) {
     },[])
     // change to page Idx, go get next pagination
     useEffect(()=>{
-        console.log('change to pageIdx')
         const getPlayers = async function() {
             let res = await NHLstatsAPI.getPlayers(pageIdx, paginationLimit);
             setCurrPlayers(res);

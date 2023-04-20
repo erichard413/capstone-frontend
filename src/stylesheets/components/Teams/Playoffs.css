@@ -643,3 +643,28 @@
     height: 40px;
     border-top: 2px solid gray;
 }
+@media (max-width: 479px) {
+    .Playoffs .Playoffs-table {
+        display: none;
+    }
+    .Playoffs .Playoffs-table-mobile {
+        text-align: center;
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+        width: 80%;
+    }
+    .Playoffs .Playoffs-Winner {
+        display: none;
+    }
+    .Playoffs .round-title {
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    .Playoffs .conference {
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 0px;
+        margin: 1px;
+    }
+}

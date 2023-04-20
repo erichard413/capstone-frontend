@@ -18,6 +18,7 @@ function StandingsTableLeague({standings}) {
     return (
         <div className="StandingsTable"> 
         <h2>League Standings</h2>
+        <div>
          <table>
             <thead>
                 <tr>
@@ -64,6 +65,7 @@ function StandingsTableLeague({standings}) {
                     ))}
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }

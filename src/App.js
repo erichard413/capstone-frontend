@@ -30,7 +30,6 @@ function App() {
   useEffect(()=>{
     async function getTokenFromLS() {
       let token = localStorage.getItem("token") || null;
-      console.log('getting token..')
       if (token) {
         NHLstatsAPI.token = token;
       }
@@ -49,7 +48,6 @@ function App() {
       getUserData();
     }
     async function getTeamData() {
-      console.log(`getting teams..`)
       const res = await NHLstatsAPI.getTeams();
       setTeams(res);
     }
@@ -82,7 +80,6 @@ function App() {
         let favPlayers = await getFavPlayers(userData.username);
           userData.watchedTeams = await getWatchedTeams(userData);
           userData.favPlayers = favPlayers;
-          console.log('got user: ',  userData)
           setUser(userData);
           navigate('/home')
       return res;
@@ -98,7 +95,7 @@ function App() {
     localStorage.removeItem('token')
     NHLstatsAPI.token = null;
   }
-  
+
   return (
     <div className="App">
         <NavBar user={user} logOut={logOutUser}/>
@@ -109,9 +106,9 @@ function App() {
             <Route exact path="/register" element={<Register setUser={setUser} teams={teams}/>} />
             <Route exact path="/profile" element={<Profile user={user} setUser={setUser} teams={teams} />} />
             <Route exact path="/teams" element={<Teams teams={teams} />} />
-            <Route exact path="/activeplayers" element={<ActivePlayers user={user} setUser={setUser}/>} />
-            <Route exact path="/allplayers" element={<AllPlayers user={user} setUser={setUser}/>} />
-            <Route exact path="/players/:playerId" element={<PlayerDetail />} />
+            <Route exact path="/activeplayers" element={<ActivePlayers user={user} setUser={setUser} />} />
+            <Route exact path="/allplayers" element={<AllPlayers user={user} setUser={setUser} />} />
+            <Route exact path="/players/:playerId" element={<PlayerDetail user={user} setUser={setUser} />} />
             <Route exact path="/myplayers" element={<FavPlayers user={user} setUser={setUser} />} />
             <Route exact path="/teams/:teamId" element={<TeamDetail user={user} setUser={setUser} selectedSeason={selectedSeason} setSelectedSeason={setSelectedSeason}/>} />
             <Route exact path="/standings" element={<Standings />} />

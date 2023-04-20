@@ -9,7 +9,7 @@ import headshot from '../../Assets/images/default_profile_picture.png';
 
 
 
-function PlayerDetail() {
+function PlayerDetail({user, setUser}) {
     const [player, setPlayer] = useState();
     const [stats, setStats] = useState();
     const {playerId} = useParams();
@@ -44,6 +44,27 @@ function PlayerDetail() {
         error.target.src = headshot;
     }
 
+    function handleAdd(){
+        async function addPlayer() {
+            await NHLstatsAPI.addPlayerToFavorites(user.username, player.playerId || player.id);
+            // update user, add player ID to favPlayers.
+            let userCopy = {...user}
+            userCopy.favPlayers[player.playerId || player.id] = player;
+            setUser(userCopy);
+        }
+        addPlayer();
+    }
+    function handleRemove(){
+        async function removePlayer() {
+            await NHLstatsAPI.removePlayerFromFavorites(user.username, player.playerId|| player.id);
+            // update user, add player ID to favPlayers.
+            let userCopy = {...user}
+            delete userCopy.favPlayers[player.playerId || player.id]
+            setUser(userCopy);
+        }
+        removePlayer();
+    }
+
     return (
         <div className="PlayerDetail main-content">
             <h2>{player.fullName}</h2>
@@ -59,7 +80,11 @@ function PlayerDetail() {
                         <li> <span className="font-weighted">{player.primaryPosition.type !== "Goalie" ? "Shoots: " : "Catches: " }</span>
                         {player.shootsCatches === "R" ? "Right" : "Left"}
                         </li>
+                        <li>
+                            {user && <>{user.favPlayers[player.playerId || player.id] ? <><button className="Full-view" onClick={handleRemove}>REMOVE</button> </> : <button className="Full-view" onClick={handleAdd}>ADD</button>}</>}
+                        </li>
                     </ul>
+                    
                 </div>
             </div>
             <div className="bio-div">

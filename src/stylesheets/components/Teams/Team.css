@@ -3,7 +3,10 @@
 .Team .top-container {
     height: 300px;
 }
-
+.Team a {
+    text-decoration: none;
+    color: var(--silver);
+}
 .Team .name-img-div {
     display: inline-block;
 }
@@ -103,6 +106,9 @@
     background-color: black;
     color: white;
     cursor: pointer;
+}
+.Team button:disabled {
+    opacity: 20%;
 }
 .Team Select {
     display: inline-block;

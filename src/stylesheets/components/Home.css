@@ -101,7 +101,7 @@
         height: 1.5rem;
         margin: 0px;
         display: inline-block;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         /* outline: 1px solid grey; */
     }
     .watchedTeams .PlayerCard img {
@@ -110,7 +110,7 @@
         margin: 10px;
         display: inline-block;
     }
-    .PlayerCard .Mobile-view {
+    .Home .PlayerCard .Mobile-view {
         text-align: center;
         width: 50px;
         position: absolute;
