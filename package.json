@@ -9,9 +9,8 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@nhl-api/players": "^3.1.4",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.3.4",
+    "axios": "^0.27.2",
     "babel-plugin-macros": "^3.1.0",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
@@ -45,5 +44,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@testing-library/react": "^14.0.0"
   }
 }

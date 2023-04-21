@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import {Route, Routes, Navigate, useNavigate} from 'react-router-dom';
+import {Route, Routes, useNavigate, Navigate} from 'react-router-dom';
 import jwt_decode from 'jwt-decode'
 import NavBar from './components/NavBar'
 import Login from './components/Login'
@@ -95,7 +95,6 @@ function App() {
     localStorage.removeItem('token')
     NHLstatsAPI.token = null;
   }
-
   return (
     <div className="App">
         <NavBar user={user} logOut={logOutUser}/>

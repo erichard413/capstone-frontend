@@ -149,6 +149,10 @@ class NHLstatsAPI {
         const res = await axios.get(`${NHLAPI_BASE_URL}/schedule?teamId=${teamId}&season=${season}`);
         return res.data.dates;
     }
+    static async deleteUser(username) {
+        await this.request(`users/${username}`, {}, 'delete');
+        return;
+    }
 }
 
 export default NHLstatsAPI

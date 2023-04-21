@@ -19,7 +19,7 @@ function Home({user, setUser}) {
                     <Button onClick={() => navigate("/login", {replace: true})}>Login</Button>
                     <Button onClick={() => navigate("/register", {replace: true})}>Sign Up</Button>
                     <div className="Home-video-div">
-                        <video autoplay="autoplay" loop="true" muted>
+                        <video autoPlay="autoplay" loop={true} muted>
                             <source src="https://www.shutterstock.com/shutterstock/videos/1098337409/preview/stock-footage-ice-hockey-cinematic-slow-motion-footage-of-goals-net-hit-by-puck-player-hitting-puck-with-stick.webm" type="video/webm" />
                         </video>
                     </div>

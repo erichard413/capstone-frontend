@@ -99,7 +99,7 @@ function Team({user, setUser, selectedSeason, setSelectedSeason}) {
         navigate(`/games/${teamId}/${selectedSeason}`);
     }
     return (
-        <div className="Team main-content">
+        <div className="Team main-content" label={`teamdiv${team.id}`}>
             <h2>{team.name}</h2>
             <div className="top-container">
                     <div className="Team name-img-div">
