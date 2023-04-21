@@ -1,3 +1,65 @@
+# NHLSTATS App
+
+This is my Capstone project for Springboard/UMASS Global Software Engineering Bootcamp. This app provides an easy place to look up National Hockey League (NHL) hockey stats, track watched players and teams & playoffs information.
+
+## APIs used
+
+This app makes heavy use of the NHL's API, which is documented here: https://gitlab.com/dword4/nhlapi/-/blob/master/stats-api.md
+
+## Tech stack used
+
+This app was built with React using the following packages:
+    *axios
+    *react-router
+    *react-scripts
+    *react-router-dom
+    *react-dom
+    *reactstrap
+    *jwt-decode
+    *react-testing-library
+    *@nhl-api/players
+
+## User Flow
+
+Users can navigate through player pages, team pages & stats pages without creating a User Account. However creating a User Account will allow users to save favorited players and teams for quick reference to stats. A user can select their favorite team, and the color scheme for the navbar will change based on the favorited team. A user can add players by navigating to the player pages.
+
+# All Players
+
+This page shows the archive of every player to play in "the show". Clicking on a player's icon will navigate the user to the player detail page which shows biographical information & their archived stats. If a user is logged in, button for add/remove the player to the user's favorites. This page also has access to a search bar along with paginated results to prevent data overflow.
+
+# Active Players
+
+This page shows the archive of every player currently on a team roster. Clicking on a player's icon will navigate the user to the player detail page which shows biographical information & their archived stats. If a user is logged in, button for add/remove the player to the user's favorites. This page also has access to a search bar along with paginated results to prevent data overflow.
+
+# Standings
+
+This page shows standings for the selected season. The user may use the drop down to select the requested season, and data will update based on the selected season. Standings can be by division, wildcard, conference, or playoffs*
+
+# Standings > Playoffs
+
+This page will show the results of the season's current NHL Stanley Cup Playoffs. If user is on desktop, they will see a playoff bracket - if on mobile they will see a specialized mobile version.
+
+# Account
+
+This page is where a user will update their information. The user can change their favorite team, first/last name & email.
+
+# Teams
+
+This page displays all NHL teams, which when clicked will take the user to that teams' detail page.
+
+## Features Implemented
+
+    *This page includes a dynamic styling based on users' favorite team id
+    *Player search including pagination
+    *Log in, log out auth
+    *Season selection which changes data displayed
+
+## Testing
+
+Tests are including in ./components/tests and can be run by using:
+    npm test
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -29,42 +91,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
