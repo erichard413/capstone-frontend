@@ -112,9 +112,12 @@ function AllPlayers({user, setUser}) {
                 <Button onClick={handleSearch}>SEARCH</Button>
                 <Button onClick={handleReset}>RESET</Button>
             </Form>
+            <div className="pagination-buttons">
                 <button onClick={handlePrev} disabled={prevBtnDisabled}> &larr; </button>
                 <p className="pageIdx">{pageIdx}</p>
                 <button onClick={handleNext} disabled={nextBtnDisabled}> &rarr; </button>
+            </div>
+
             </div>
             {allPlayers.results.map(p=> <PlayerCard key={p.playerId} user={user} setUser={setUser} player={p} />)}
         </div>

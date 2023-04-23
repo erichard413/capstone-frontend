@@ -45,3 +45,9 @@
     margin: 0px;
     padding-bottom: 20px;
 }
+@media (max-width: 479px) {
+    .pagination-buttons {
+        padding-top: 20px;
+        /* outline: 1px solid blue; */
+    }
+}
