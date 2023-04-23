@@ -41,3 +41,9 @@
     color: white;
     cursor: pointer;
 }
+@media (max-width: 479px) {
+    .Login {
+        width: 100%;
+        text-align: center;
+    }
+}

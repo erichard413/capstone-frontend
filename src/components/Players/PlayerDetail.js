@@ -37,7 +37,8 @@ function PlayerDetail({user, setUser}) {
         )
     }
 
-    let imgURL = `http://nhl.bamcontent.com/images/headshots/current/168x168/${playerId}.jpg`;
+    // let imgURL = `http://nhl.bamcontent.com/images/headshots/current/168x168/${playerId}.jpg`;
+    let imgURL = `https://cms.nhl.bamgrid.com/images/headshots/current/168x168/${playerId || player.id}.jpg`
 
     // to replace image if image URL is not found/forbidden.
     function replaceImage(error) {

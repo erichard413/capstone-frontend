@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 .Register button:disabled {
-    opacity: 20%;
+    opacity: .2;
 }
 .Register button:disabled:hover {
     margin-top: 15px;
@@ -59,4 +59,10 @@
     width: 100.5%;
     font-family: Dosis, Arial, Helvetica, sans-serif;
     border: 2px solid black; 
+}
+@media (max-width: 479px) {
+    .Register {
+        width: 100%;
+        text-align: center;
+    }
 }

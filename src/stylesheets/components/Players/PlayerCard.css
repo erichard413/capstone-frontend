@@ -15,7 +15,7 @@
     border-radius: 50%;
 }
 .PlayerCard img:hover {
-    opacity: 70%;
+    opacity: .7;
     cursor: pointer;
 }
 .PlayerCard button {

@@ -26,11 +26,12 @@ function NavBar({user, logOut}) {
     return (
       <div className={`NavBar ${user ? `team-${user.favTeamId}` : 'default'}`}>   
       <Navbar className="Mobile-nav" expand="md">
-        <NavbarBrand className="me-auto">
-          <NavLink to="/" className="navbar-brand">
-            <h1>NHL<span id="tinyHeader">STATS</span></h1> 
-          </NavLink>
-        </NavbarBrand>
+        {/* <NavbarBrand className="me-auto"> */}
+        {/* <div className="navbar-brand"> */}
+          <h1 onClick={()=>navigate('/', {replace: true})}>NHL<span id="tinyHeader">STATS</span></h1> 
+        {/* </div> */}
+
+        {/* </NavbarBrand> */}
         <div className="showhidebtndiv collapse-toggler" onClick={toggleNavbar}>
           <div></div>
           <div></div>
@@ -54,11 +55,7 @@ function NavBar({user, logOut}) {
         {/* </Collapse> */}
        </Navbar>
        <Navbar expand="md" className="Main-nav">
-        <NavLink to="/" className="navbar-brand">
-          <h1>NHL<span id="tinyHeader">STATS</span></h1> 
-        </NavLink>
-        
-
+          <h1 onClick={()=>navigate('/', {replace: true})}>NHL<span id="tinyHeader">STATS</span></h1> 
         <Nav className="ml-auto" navbar>
           {user && <NavItem><NavLink to="/profile">Account</NavLink></NavItem>}
           <NavItem><NavLink to="/teams">Teams</NavLink></NavItem>
