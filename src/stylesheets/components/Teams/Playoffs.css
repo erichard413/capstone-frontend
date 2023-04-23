@@ -643,6 +643,9 @@
     height: 40px;
     border-top: 2px solid gray;
 }
+.Playoffs .Playoffs-table-mobile {
+    display: none;
+}
 @media (max-width: 479px) {
     .Playoffs .Playoffs-table {
         display: none;
