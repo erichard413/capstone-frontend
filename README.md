@@ -1,4 +1,5 @@
 # NHLSTATS App
+Deployed: https://nhlstats-app.netlify.app
 
 This is my Capstone project for Springboard/UMASS Global Software Engineering Bootcamp. This app provides an easy place to look up National Hockey League (NHL) hockey stats, track watched players and teams & playoffs information.
 
